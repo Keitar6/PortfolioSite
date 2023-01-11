@@ -1,0 +1,1 @@
+declare module 'react-card-scratch-off'
