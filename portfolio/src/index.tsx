@@ -1,18 +1,27 @@
 import { StylesProvider } from '@material-ui/core';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { ModalsProvider } from './contexts/modals.context';
+import { GlobalStyle } from './global.styles';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+export const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
+
 root.render(
-  <React.StrictMode>
-    <StylesProvider injectFirst>
-      <App />
-    </StylesProvider>
-  </React.StrictMode>
+  <StrictMode>
+    <BrowserRouter>
+      <ModalsProvider>
+        <StylesProvider injectFirst>
+          <GlobalStyle />
+          <App />
+        </StylesProvider>
+      </ModalsProvider>
+    </BrowserRouter>
+  </StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
