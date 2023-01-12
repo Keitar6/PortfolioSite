@@ -1,43 +1,31 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import { ReactNode, useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ModalsContext } from '../../contexts/modals.context';
+import parse from 'html-react-parser';
+import {
+  Band,
+  BandText,
+  ModalContentContainer,
+  ModuleContentText,
+  SecondBand,
+} from './gameBlockModal.styles';
+import { H2 } from '../../global.styles';
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
 const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   paper: {
     position: 'absolute',
     width: 450,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
   },
 }));
-type SomeModalPropsTypes = {
-  children?: ReactNode;
-};
 
-export default function GameBlockModal({ children }: SomeModalPropsTypes) {
+export default function GameBlockModal() {
   const classes = useStyles();
-  const [modalStyle] = useState(getModalStyle);
 
-  const { isModalOpen, setIsModalOpen } = useContext(ModalsContext);
+  const { isModalOpen, setIsModalOpen, modalContent } =
+    useContext(ModalsContext);
 
   const handleModalClose = () => {
     setIsModalOpen(false);
@@ -45,20 +33,21 @@ export default function GameBlockModal({ children }: SomeModalPropsTypes) {
 
   return (
     <>
-      <Modal
-        aria-labelledby='simple-modal-title'
-        aria-describedby='simple-modal-description'
-        open={isModalOpen}
-        onClose={handleModalClose}
-      >
-        <div style={modalStyle} className={classes.paper}>
-          <h2>Simple React Modal</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            accumsan odio enim, non pharetra est ultrices et.
-          </p>
-        {children}
-        </div>
+      <Modal open={isModalOpen} onClose={handleModalClose}>
+        <ModalContentContainer className={classes.paper}>
+          <Band>
+            <BandText>
+              <H2>About</H2>
+            </BandText>
+          </Band>
+          <ModuleContentText>{parse(modalContent)}</ModuleContentText>
+          <SecondBand>
+            <BandText>
+              <H2>Education</H2>
+            </BandText>
+          </SecondBand>
+          <ModuleContentText>{parse(modalContent)}</ModuleContentText>
+        </ModalContentContainer>
       </Modal>
     </>
   );

@@ -16,6 +16,7 @@ export const Typography = {
     PSmal: '0.75rem',
   },
   buttonsRadius: '0.7rem',
+  modalRadius: '1rem',
 };
 
 export enum Colors {
@@ -69,6 +70,7 @@ export const HPName = styled.h1`
 
 export const H1 = styled.h1`
   font-size: ${Typography.fontSizes.H1};
+  font-weight: bold;
 `;
 export const H2 = styled.h2`
   font-size: ${Typography.fontSizes.H2};
