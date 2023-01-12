@@ -10,8 +10,7 @@ export const GameBlocksContainer = () => {
           const whichEndToJustify = index % 2 === 0 ? 'start' : 'end';
           return (
             <GameBlockWrapper key={index} whichEndToJustify={whichEndToJustify}>
-              <GameBlock icon={gameBlockIcons[iconName]} />
-               
+              <GameBlock key={index} icon={gameBlockIcons[iconName]} />
             </GameBlockWrapper>
           );
         }

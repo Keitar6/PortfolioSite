@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useContext, useState } from 'react';
+import { ModalsContext } from '../../contexts/modals.context';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -29,28 +29,27 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
+type SomeModalPropsTypes = {
+  children?: ReactNode;
+};
 
-export default function SomeModal({ children }: { children: ReactNode }) {
+export default function GameBlockModal({ children }: SomeModalPropsTypes) {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
-  const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  
-  const handleClose = () => {
-    setOpen(false);
+  const { isModalOpen, setIsModalOpen } = useContext(ModalsContext);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   return (
-    <div>
-      <Button variant='contained' onClick={handleOpen}></Button>
+    <>
       <Modal
         aria-labelledby='simple-modal-title'
         aria-describedby='simple-modal-description'
-        open={open}
-        onClose={handleClose}
+        open={isModalOpen}
+        onClose={handleModalClose}
       >
         <div style={modalStyle} className={classes.paper}>
           <h2>Simple React Modal</h2>
@@ -58,8 +57,9 @@ export default function SomeModal({ children }: { children: ReactNode }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             accumsan odio enim, non pharetra est ultrices et.
           </p>
+        {children}
         </div>
       </Modal>
-    </div>
+    </>
   );
 }

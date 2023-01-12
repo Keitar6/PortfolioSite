@@ -1,16 +1,31 @@
-import { createContext, useState, FC, PropsWithChildren } from 'react';
+import {
+  createContext,
+  useState,
+  FC,
+  PropsWithChildren,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
-export const ModalsContext = createContext({
-  isGameBlockOpen: false,
+type contextModalType = {
+  isModalOpen: boolean;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+export const ModalsContext = createContext<contextModalType>({
+  isModalOpen: false,
+  setIsModalOpen: () => {},
 });
 
 export const ModalsProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [isGameBlockOpen, setIsGameBlockOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const value = {
-    isGameBlockOpen,
-    setIsGameBlockOpen,
+    isModalOpen,
+    setIsModalOpen,
   };
 
-  return <ModalsContext.Provider value={value}>{children}</ModalsContext.Provider>;
+  return (
+    <ModalsContext.Provider value={value}>{children}</ModalsContext.Provider>
+  );
 };
