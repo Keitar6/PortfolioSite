@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const Typography = {
-  fontType: '"Playfair Display","Tapestry", "Dancing Script", cursive',
+  fontType: '"Roboto", "Helvetica", "Arial", sans-serif',
   fontSizes: {
     HPName: '6rem',
     H1: '3.05 rem',
