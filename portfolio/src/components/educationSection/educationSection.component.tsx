@@ -15,26 +15,6 @@ export const EducationSectionText = () => {
       <EducationContainer>
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>
-            <SchoolDate>2016/10</SchoolDate>
-          </EducationalDatesContainer>
-
-          <EducationalSchoolDescription>
-            <H4>Automatic Control and Robotics, Bachelor of Engineering</H4>
-          </EducationalSchoolDescription>
-        </EducationalSchoolsContainer>
-        <EducationalSchoolsContainer>
-          <EducationalDatesContainer>
-            <SchoolDate>- 2020/02</SchoolDate>
-          </EducationalDatesContainer>
-          <EducationalSchoolDescription>
-            <div>University of Science and Technology in Wroclaw</div>
-          </EducationalSchoolDescription>
-        </EducationalSchoolsContainer>
-      </EducationContainer>
-
-      <EducationContainer>
-        <EducationalSchoolsContainer>
-          <EducationalDatesContainer>
             <SchoolDate>2020/10</SchoolDate>
           </EducationalDatesContainer>
 
@@ -45,6 +25,25 @@ export const EducationSectionText = () => {
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>
             <SchoolDate>- Present</SchoolDate>
+          </EducationalDatesContainer>
+          <EducationalSchoolDescription>
+            <div>University of Science and Technology in Wroclaw</div>
+          </EducationalSchoolDescription>
+        </EducationalSchoolsContainer>
+      </EducationContainer>
+      <EducationContainer>
+        <EducationalSchoolsContainer>
+          <EducationalDatesContainer>
+            <SchoolDate>2016/10</SchoolDate>
+          </EducationalDatesContainer>
+
+          <EducationalSchoolDescription>
+            <H4>Automatic Control and Robotics, Bachelor of Engineering</H4>
+          </EducationalSchoolDescription>
+        </EducationalSchoolsContainer>
+        <EducationalSchoolsContainer>
+          <EducationalDatesContainer>
+            <SchoolDate>- 2020/02</SchoolDate>
           </EducationalDatesContainer>
           <EducationalSchoolDescription>
             <div>University of Science and Technology in Wroclaw</div>

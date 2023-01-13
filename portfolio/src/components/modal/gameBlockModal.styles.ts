@@ -51,10 +51,6 @@ export const ModuleContent = styled(StandardFlexContainer)`
   margin: 0.8rem 0rem;
 `;
 
-
-
-
-
 export const DialogContentHiddenScrollbar = styled(DialogContent)``;
 export const DialogTitleCustom = styled(DialogTitle).attrs({
   id: 'scroll-dialog-title',
