@@ -1,9 +1,4 @@
-import {
-  Button,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from '@material-ui/core';
+import { Button, DialogActions, DialogTitle } from '@material-ui/core';
 import styled from 'styled-components';
 import { Colors, StandardFlexContainer, Typography } from '../../global.styles';
 
@@ -51,7 +46,6 @@ export const ModuleContent = styled(StandardFlexContainer)`
   margin: 0.8rem 0rem;
 `;
 
-export const DialogContentHiddenScrollbar = styled(DialogContent)``;
 export const DialogTitleCustom = styled(DialogTitle).attrs({
   id: 'scroll-dialog-title',
 })`

@@ -1,26 +1,43 @@
 import { useContext, useEffect, useRef } from 'react';
 import { ModalsContext } from '../../contexts/modals.context';
-import parse from 'html-react-parser';
+
 import {
   Band,
   BandText,
   ModuleContent,
   SecondBand,
   SecondBandText,
-  DialogContentHiddenScrollbar,
   DialogTitleCustom,
   DialogActionsCustom,
 } from './gameBlockModal.styles';
-import { EducationSectionText } from '../educationSection/educationSection.component';
-import { Button, Dialog, DialogContentText } from '@material-ui/core';
+
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+} from '@material-ui/core';
+import { GAME_BLOCK_BUTTONS_MODALS_CONTENT } from '../modalsContents/getModalContent.function';
+
+import Parser from 'html-react-parser';
+
 import { AboutSection } from '../aboutSection/aboutSection.component';
 
 export default function GameBlockModal() {
-  const { isModalOpen, setIsModalOpen, modalContent } =
-    useContext(ModalsContext);
-
+  const {
+    isModalOpen,
+    setIsModalOpen,
+    modalContent,
+    setModalContent,
+    modalContentTitle,
+    setModalContentTitle,
+    clickedGameBlockIndex,
+    setClickedGameBlockIndex,
+  } = useContext(ModalsContext);
+  console.log(modalContent);
   const handleClose = () => {
     setIsModalOpen(false);
+    setClickedGameBlockIndex(-1);
   };
 
   const descriptionElementRef = useRef<HTMLElement>(null);
@@ -31,12 +48,54 @@ export default function GameBlockModal() {
         descriptionElement.focus();
       }
     }
-  }, [isModalOpen]);
+    switch (clickedGameBlockIndex) {
+      case 0:
+        setModalContentTitle(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.START_BUTTON.title
+        );
+        setModalContent(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.START_BUTTON.content(
+            clickedGameBlockIndex
+          )
+        );
+        break;
+      case 1:
+        setModalContentTitle(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.SECOND_BUTTON.title
+        );
+        setModalContent(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.SECOND_BUTTON.content(
+            clickedGameBlockIndex
+          )
+        );
+        break;
 
+      case 2:
+        setModalContentTitle(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.THIRD_BUTTON.title
+        );
+        setModalContent(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.THIRD_BUTTON.content(
+            clickedGameBlockIndex
+          )
+        );
+        break;
+      case 3:
+        setModalContentTitle(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.END_BUTTON.title
+        );
+        setModalContent(
+          GAME_BLOCK_BUTTONS_MODALS_CONTENT.END_BUTTON.content(
+            clickedGameBlockIndex
+          )
+        );
+        break;
+      default:
+        return;
+    }
+  }, [isModalOpen]);
   return (
     <>
-      {/* parse(modalContent) */}
-
       <Dialog
         open={isModalOpen}
         onClose={handleClose}
@@ -44,21 +103,17 @@ export default function GameBlockModal() {
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
-        <DialogTitleCustom> About / Education</DialogTitleCustom>
+        <DialogTitleCustom> {modalContentTitle}</DialogTitleCustom>
 
-        <DialogContentHiddenScrollbar>
+        <DialogContent>
           <DialogContentText
             id='scroll-dialog-description'
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            <ModuleContent>
-              <AboutSection />
-            </ModuleContent>
-
-            <EducationSectionText />
+            {modalContent}
           </DialogContentText>
-        </DialogContentHiddenScrollbar>
+        </DialogContent>
         <DialogActionsCustom>
           <Button onClick={handleClose}>Back</Button>
           <Button onClick={handleClose}>Forth</Button>

@@ -10,32 +10,58 @@ import {
 type contextModalType = {
   isModalOpen: boolean;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  modalContent: string;
-  setModalContent: Dispatch<SetStateAction<string>>;
+  
+  modalContent: any;
+  setModalContent: Dispatch<SetStateAction<any>>;
+
+  modalContentTitle: string;
+  setModalContentTitle: Dispatch<SetStateAction<string>>;
+
+  clickedGameBlockIndex: number;
+  setClickedGameBlockIndex: Dispatch<SetStateAction<number>>;
 };
 
-const modalContentInit = `
+const modalInit = {
+  title: 'Title',
+  content: `
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             accumsan odio enim, non pharetra est ultrices et.
 
-`;
+`,
+};
 
 export const ModalsContext = createContext<contextModalType>({
   isModalOpen: false,
   setIsModalOpen: () => {},
-  modalContent: modalContentInit,
+  modalContent: modalInit.content,
   setModalContent: () => {},
+  modalContentTitle: modalInit.title,
+  setModalContentTitle: () => {},
+  clickedGameBlockIndex: -1,
+  setClickedGameBlockIndex: () => {},
 });
 
 export const ModalsProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalContent, setModalContent] = useState<string>(modalContentInit);
+  const [modalContent, setModalContent] = useState<string>(modalInit.content);
+  const [modalContentTitle, setModalContentTitle] = useState<string>(
+    modalInit.title
+  );
+  const [clickedGameBlockIndex, setClickedGameBlockIndex] =
+    useState<number>(-1);
 
   const value = {
     isModalOpen,
     setIsModalOpen,
+
     modalContent,
     setModalContent,
+
+    modalContentTitle,
+    setModalContentTitle,
+
+    clickedGameBlockIndex,
+    setClickedGameBlockIndex,
   };
 
   return (

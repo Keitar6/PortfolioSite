@@ -8,9 +8,10 @@ export const GameBlocksContainer = () => {
       {(Object.keys(gameBlockIcons) as Array<keyof typeof gameBlockIcons>).map(
         (iconName, index) => {
           const whichEndToJustify = index % 2 === 0 ? 'start' : 'end';
+          
           return (
             <GameBlockWrapper key={index} whichEndToJustify={whichEndToJustify}>
-              <GameBlock key={index} icon={gameBlockIcons[iconName]} />
+              <GameBlock index={index} icon={gameBlockIcons[iconName]} />
             </GameBlockWrapper>
           );
         }
