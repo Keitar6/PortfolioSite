@@ -13,7 +13,7 @@ export const Typography = {
     H6: '1 rem',
     PLarge: '1.5 rem',
     PBase: '1rem',
-    PSmal: '0.75rem',
+    PSmall: '0.75rem',
   },
   buttonsRadius: '0.7rem',
   modalRadius: '1rem',
@@ -96,6 +96,12 @@ export const H6 = styled.h6`
 export const PLarge = styled.p`
   font-size: ${Typography.fontSizes.PLarge};
 `;
+export const PBase = styled.p`
+  font-size: ${Typography.fontSizes.PBase};
+`;
+export const PSmall = styled.p`
+  font-size: ${Typography.fontSizes.PSmall};
+`;
 
 export const StandardFlexContainer = styled.div`
   display: inline-flex;
@@ -104,14 +110,14 @@ export const StandardFlexContainer = styled.div`
   justify-content: center;
 `;
 export const Title = styled(H3)`
-  border-bottom: 2px solid;
-  border-image-slice: 1;
+  // border-bottom: 2px solid;
+  // border-image-slice: 1;
 
-  border-image-source: linear-gradient(
-    to left,
-    ${Colors.primary},
-    ${Colors.dark}
-  );
+  // border-image-source: linear-gradient(
+  //   to left,
+  //   ${Colors.primary},
+  //   ${Colors.dark}
+  // );
   padding-bottom: 0.5rem;
   position: relative;
 

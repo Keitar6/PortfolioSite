@@ -12,7 +12,8 @@ import {
   DialogContent,
   DialogContentText,
 } from '@material-ui/core';
-import { getGameBlockContent } from '../modalsContents/getModalContent.function';
+import { getGameBlockContent } from '../../functions/getModalContent.function';
+import { Title } from '../../global.styles';
 export default function GameBlockModal() {
   const {
     isModalOpen,
@@ -49,7 +50,9 @@ export default function GameBlockModal() {
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
-        <DialogTitleCustom> {modalContentTitle}</DialogTitleCustom>
+        <DialogTitleCustom>
+          <Title>{modalContentTitle}</Title>{' '}
+        </DialogTitleCustom>
 
         <DialogContent>
           <DialogContentText
