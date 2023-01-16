@@ -1,9 +1,8 @@
-import { FC, useContext, useEffect } from 'react';
+import { FC, useContext } from 'react';
 import { GameBlockContainer } from './gameBlock.styles';
 import { GameBlockIcon } from './gameBlockIcons/gameBlock.Icons';
 import { gameBlockIconType } from '../../../utils/gameBlock.utils';
 import { ModalsContext } from '../../../contexts/modals.context';
-import { GAME_BLOCK_BUTTONS_MODALS_CONTENT } from '../../modalsContents/getModalContent.function';
 
 type GameBlockProps = {
   index: number;
