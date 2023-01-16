@@ -1,5 +1,5 @@
-export const ProjectsSection=()=>{
+import { ProjectsSectionContainer } from './projectsSection.styles';
 
-
-    return <div>Projects Section</div>
-}
+export const ProjectsSection = () => {
+  return <ProjectsSectionContainer>Projects Section</ProjectsSectionContainer>;
+};

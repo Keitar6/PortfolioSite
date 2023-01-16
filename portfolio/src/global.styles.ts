@@ -23,7 +23,7 @@ export enum Colors {
   primary = '#5F3495',
   primaryRGBA = '#5F3495e',
   secondary = '#FFFFFF',
-  tertiary = '#F8BE0E',
+  tertiary = '#0000008a',
 
   dark = '#000000',
 

@@ -8,26 +8,28 @@ import {
   SecretButtonContainer,
 } from './homePage.styles';
 import ScratchOff from 'react-card-scratch-off';
+import { Footer } from '../../components/footer/footer.component';
 
 export const HomePage = () => {
   return (
-    <HomePageContainer>
-      <GameBlocksContainer />
+    <>
+      <HomePageContainer>
+        <GameBlocksContainer />
 
-      <WelcomeContainer>
-        <MyNameOnHp>
-          <em>Hi, hello!</em>
-        </MyNameOnHp>
-        <DescriptionHp>
-          {' '}
-          i am a FrontEnd Developer , coffe lover and a secrets lover?{' '}
-        </DescriptionHp>
-        <SecretButtonContainer>
-          
-          <SecretButton>Don't push me!</SecretButton>
-
-        </SecretButtonContainer>
-      </WelcomeContainer>
-    </HomePageContainer>
+        <WelcomeContainer>
+          <MyNameOnHp>
+            <em>Hi, hello!</em>
+          </MyNameOnHp>
+          <DescriptionHp>
+            {' '}
+            i am a FrontEnd Developer , coffe lover and a secrets lover?{' '}
+          </DescriptionHp>
+          <SecretButtonContainer>
+            <SecretButton>Don't push me!</SecretButton>
+          </SecretButtonContainer>
+        </WelcomeContainer>
+      </HomePageContainer>
+      <Footer />
+    </>
   );
 };

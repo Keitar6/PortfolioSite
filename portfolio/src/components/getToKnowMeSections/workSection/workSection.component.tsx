@@ -1,4 +1,4 @@
-import { PLarge, H4 } from '../../global.styles';
+import { PLarge, H4 } from '../../../global.styles';
 import {
   WorkSectionContainer,
   ResponsibilitiesContainer,

@@ -3,7 +3,7 @@ import { EducationSectionText } from '../components/getToKnowMeSections/educatio
 import { ContactSection } from '../components/getToKnowMeSections/contactSection/contactSection.component';
 import { ProjectsSection } from '../components/getToKnowMeSections/projectsSection/projectsSection.component';
 import { StartSection } from '../components/getToKnowMeSections/startSection/startSection.component';
-import { WorkSection } from '../components/workSection/workSection.component';
+import { WorkSection } from '../components/getToKnowMeSections/workSection/workSection.component';
 
 export const getGameBlockContent = (index: number) => {
   switch (index) {

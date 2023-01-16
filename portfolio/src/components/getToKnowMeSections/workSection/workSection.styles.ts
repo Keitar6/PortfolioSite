@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StandardFlexContainer } from '../../global.styles';
+import { StandardFlexContainer } from '../../../global.styles';
 
 export const WorkSectionContainer = styled(StandardFlexContainer)``;
 export const ExperienceContainer = styled(StandardFlexContainer)`
