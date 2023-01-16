@@ -22,7 +22,6 @@ export default function GameBlockModal() {
     modalContentTitle,
     setModalContentTitle,
     clickedGameBlockIndex,
-    setClickedGameBlockIndex,
   } = useContext(ModalsContext);
 
   const handleClose = () => {

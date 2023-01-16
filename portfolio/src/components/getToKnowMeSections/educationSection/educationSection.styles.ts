@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors, StandardFlexContainer } from '../../global.styles';
+import { Colors, StandardFlexContainer } from '../../../global.styles';
 
 export const EducationalDatesContainer = styled(StandardFlexContainer)`
   border-right: 1px solid ${Colors.dark};

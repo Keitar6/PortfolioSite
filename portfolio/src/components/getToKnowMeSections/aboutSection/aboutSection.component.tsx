@@ -1,12 +1,12 @@
 import { Icon } from '@iconify/react';
-import { H1 } from '../../global.styles';
+import { H1 } from '../../../global.styles';
 import {
   AboutSectionImage,
   AboutSectionText,
   AboutSectionContainer,
   AboutSectionImageAndBadgeContainer,
   AboutSectionIconsContainer,
-  AboutSectionWrapper
+  AboutSectionWrapper,
 } from './aboutSection.styles';
 
 export const AboutSection = () => {

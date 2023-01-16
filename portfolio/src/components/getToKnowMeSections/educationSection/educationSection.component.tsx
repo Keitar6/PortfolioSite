@@ -1,4 +1,4 @@
-import { H1, H4 } from '../../global.styles';
+import { H1, H4 } from '../../../global.styles';
 import {
   EducationalDatesContainer,
   EducationalSchoolsContainer,
