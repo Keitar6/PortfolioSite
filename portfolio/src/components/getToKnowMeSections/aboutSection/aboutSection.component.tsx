@@ -14,7 +14,7 @@ export const AboutSection = () => {
   return (
     <>
       <AboutSectionContainer>
-        <H1>Little bit about me</H1>
+        {/* <H1>Little bit about me</H1> */}
         <AboutSectionWrapper>
           <AboutSectionImageAndBadgeContainer>
             <AboutSectionImage />

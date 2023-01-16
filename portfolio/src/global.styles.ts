@@ -78,7 +78,6 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-size: ${Typography.fontSizes.H3};
-  color: ${Colors.primary};
 `;
 
 export const H4 = styled.h4`

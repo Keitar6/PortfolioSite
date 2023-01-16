@@ -11,7 +11,7 @@ import {
 export const EducationSectionText = () => {
   return (
     <EduSectionWrapper>
-      <H1>Education</H1>
+      {/* <H1>Education</H1> */}
       <EducationContainer>
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>

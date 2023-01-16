@@ -1,4 +1,4 @@
-import { H4 } from '../../../global.styles';
+import { H4, H2, H3 } from '../../../global.styles';
 import { ContactSectionContainer } from './contactSection.styles';
 import { WaysToContact } from './waysToContact/waysToContact.component';
 
@@ -8,8 +8,7 @@ export const ContactSection = () => {
       <H4>Here are some ways in which you can contact me directly</H4>
 
       <WaysToContact />
-      <H4>Feel free to contact me as soon as you have any questions!</H4>
-
+      <H3>Feel free to contact me as soon as you have any questions!</H3>
     </ContactSectionContainer>
   );
 };

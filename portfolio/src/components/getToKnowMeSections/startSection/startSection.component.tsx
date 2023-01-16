@@ -1,5 +1,9 @@
-export const StartSection=()=>{
+import { AboutSection } from "../aboutSection/aboutSection.component"
 
-
-    return <div>Start Section</div>
-}
+export const StartSection = () => {
+  return (
+    <>
+      <AboutSection />
+    </>
+  );
+};
