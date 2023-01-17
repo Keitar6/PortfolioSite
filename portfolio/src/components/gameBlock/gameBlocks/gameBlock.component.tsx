@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { GameBlockContainer } from './gameBlock.styles';
 import { GameBlockIcon } from './gameBlockIcons/gameBlock.Icons';
-import { gameBlockIconType } from '../../../utils/gameBlock.utils';
+import { gameBlockIconType } from '../../../utils/gameBlock/gameBlock.utils';
 import { ModalsContext } from '../../../contexts/modals.context';
 
 type GameBlockProps = {

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
-import { Colors, StandardFlexContainer } from '../../../global.styles';
+import { StandardFlexContainer } from '../../../global.styles';
 
-export const ProjectsSectionContainer = styled(StandardFlexContainer)``
+export const ProjectsSectionContainer = styled(StandardFlexContainer)`
+  gap: 4rem;
+`;

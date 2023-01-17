@@ -10,7 +10,7 @@ import {
 } from './aboutSection.styles';
 
 export const AboutSection = () => {
-  const imagesWidth = '38';
+  const imagesWidth = '32';
   return (
     <>
       <AboutSectionContainer>

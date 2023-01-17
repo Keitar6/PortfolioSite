@@ -12,7 +12,7 @@ import {
   DialogContent,
   DialogContentText,
 } from '@material-ui/core';
-import { getGameBlockContent } from '../../functions/getModalContent.function';
+import { getGameBlockContent } from '../../utils/modal/getModalContent.utils'; 
 import { Title } from '../../global.styles';
 export default function GameBlockModal() {
   const {
@@ -64,8 +64,8 @@ export default function GameBlockModal() {
           </DialogContentText>
         </DialogContent>
         <DialogActionsCustom>
-          <Button onClick={handleClose}>Back</Button>
-          <Button onClick={handleClose}>Forth</Button>
+          <Button onClick={handleClose}>Previous</Button>
+          <Button onClick={handleClose}>Next</Button>
         </DialogActionsCustom>
       </Dialog>
     </>
