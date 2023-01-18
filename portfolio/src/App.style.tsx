@@ -11,4 +11,14 @@ export const AppContainer = styled.div`
   flex-direction: column;
   flex-basis: 100%;
   height: 100%;
+
+  position: relative;
+  border: 2px solid red;
+`;
+
+export const HPBCKGImage = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 7rem;
+  width: 13rem;
 `;

@@ -1,3 +1,5 @@
+import { ICONS } from '../../../../utils/icons/icons.utils';
+import { MY_INFOS } from '../../../../utils/myInfos/myInfos.utils';
 import { ContactType } from './contactType/contactType.component';
 import { WaysToContactContainer } from './waysToContact.styles';
 
@@ -5,21 +7,23 @@ export const WaysToContact = () => {
   return (
     <WaysToContactContainer>
       <ContactType
-        icon='material-symbols:perm-phone-msg-rounded'
+        icon={ICONS.phone}
         title='My phone number'
-        textType='+48 662096409'
+        textType={MY_INFOS.phoneNumber}
       />
 
       <ContactType
-        icon='ic:outline-email'
+        icon={ICONS.emailColor}
         title='Email'
-        textType='statkprivate@gmail.com'
+        textType={MY_INFOS.emailPrivate}
+        whereTo={MY_INFOS.emailPrivate}
       />
 
       <ContactType
-        icon='logos:linkedin-icon'
+        icon={ICONS.linkedin}
         title='Linkedin'
         textType='/mateuszs-statkiewicz'
+        whereTo={MY_INFOS.linkedin}
       />
     </WaysToContactContainer>
   );

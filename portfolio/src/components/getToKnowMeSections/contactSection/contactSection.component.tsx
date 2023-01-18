@@ -1,4 +1,4 @@
-import { H4, H2, H3 } from '../../../global.styles';
+import { H4, H3 } from '../../../global.styles';
 import { ContactSectionContainer } from './contactSection.styles';
 import { WaysToContact } from './waysToContact/waysToContact.component';
 
