@@ -15,4 +15,5 @@ export const GameBlockContainer = styled(StandardFlexContainer)`
     background-color: ${Colors.light};
     border: 1px solid ${Colors.primary};
   }
+  
 `;

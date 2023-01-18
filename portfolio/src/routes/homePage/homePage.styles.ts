@@ -18,7 +18,7 @@ export const WelcomeContainer = styled(StandardFlexContainer)`
   flex-direction: column;
   // border: 1px solid green;
   flex: 1 1 70%;
-  padding: 0rem 2rem;
+  // padding: 0rem 6.5rem;
   height: 100%;
 `;
 

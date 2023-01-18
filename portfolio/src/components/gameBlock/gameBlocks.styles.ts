@@ -6,6 +6,7 @@ export const GameBlocksWrapper = styled(StandardFlexContainer)`
   justify-content: center;
   flex: 1 1 30%;
   // border: 1px solid ${Colors.dark};
+
   height: 100%;
 `;
 
@@ -16,4 +17,6 @@ export const GameBlockWrapper = styled(StandardFlexContainer)<{
   padding: 0 1rem;
   justify-content: ${(props) =>
     props.whichEndToJustify ? props.whichEndToJustify : ''};
+  max-width: 15rem;
+  min-width: 11rem;
 `;
