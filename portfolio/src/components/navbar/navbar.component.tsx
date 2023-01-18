@@ -1,4 +1,3 @@
-
 import { H3, TextLink } from '../../global.styles';
 import { RouterLinks, NavbarWrapper } from './navbar.styles';
 

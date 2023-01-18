@@ -13,7 +13,6 @@ export const AppContainer = styled.div`
   height: 100%;
 
   position: relative;
-  border: 2px solid red;
 `;
 
 export const HPBCKGImage = styled.img`

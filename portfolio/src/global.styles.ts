@@ -147,6 +147,7 @@ export const TextLink = styled(Link)`
   position: relative;
   color: inherit;
   text-decoration: inherit;
+  padding: 0.4rem;
   &::before {
     content: '';
     position: absolute;
