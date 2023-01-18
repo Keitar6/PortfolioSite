@@ -11,7 +11,10 @@ import {
 export const EducationSectionText = () => {
   return (
     <EduSectionWrapper>
-      {/* <H1>Education</H1> */}
+      <img
+        src='/resources/LOGO_PWR.png'
+        alt='Wroclaw University of Science and Technology Logo'
+      />
       <EducationContainer>
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>

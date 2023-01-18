@@ -4,10 +4,8 @@ import {
   MyNameOnHp,
   HomePageContainer,
   WelcomeContainer,
-  SecretButton,
-  SecretButtonContainer,
 } from './homePage.styles';
-import ScratchOff from 'react-card-scratch-off';
+
 import { Footer } from '../../components/footer/footer.component';
 
 export const HomePage = () => {
@@ -24,9 +22,6 @@ export const HomePage = () => {
             {' '}
             i am a FrontEnd Developer , coffe lover and a secrets lover?{' '}
           </DescriptionHp>
-          <SecretButtonContainer>
-            <SecretButton>Don't push me!</SecretButton>
-          </SecretButtonContainer>
         </WelcomeContainer>
       </HomePageContainer>
       <Footer />

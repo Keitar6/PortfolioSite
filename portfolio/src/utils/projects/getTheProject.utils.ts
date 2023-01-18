@@ -23,9 +23,8 @@ export const ProjectsArray = [
     descriptionPoints: [
       'Implementation using React with Typescript',
       'State management --> Redux',
-      'Testing --> Jest',
       'Authentication and data management --> Firebase Firestore',
-      'Styling with Material UI self implemented theme',
+      'Styling --> SCSS ',
     ],
   },
 ];
