@@ -32,6 +32,8 @@ export enum Colors {
 
   pushTheButton = 'red',
 
+  arrowsColor = '#32CD32',
+
   googleButtonBCKG = '#4285f4',
   googleButtonHover = '#357ae8',
 }

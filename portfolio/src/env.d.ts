@@ -1,1 +1,1 @@
-declare module 'react-card-scratch-off'
+declare module 'react-xarrow'

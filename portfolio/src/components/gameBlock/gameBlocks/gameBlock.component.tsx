@@ -3,6 +3,7 @@ import { GameBlockContainer } from './gameBlock.styles';
 import { GameBlockIcon } from './gameBlockIcons/gameBlock.Icons';
 import { gameBlockIconType } from '../../../utils/gameBlock/gameBlock.utils';
 import { ModalsContext } from '../../../contexts/modals.context';
+import { arrowHelper } from '../../../functions/arrowsHelper.function';
 
 type GameBlockProps = {
   index: number;
@@ -20,10 +21,8 @@ export const GameBlock: FC<GameBlockProps> = ({ icon, index }) => {
   };
 
   return (
-    <>
-      <GameBlockContainer onClick={handleModalOpen}>
-        <GameBlockIcon iconName={name} iconColor={color} />
-      </GameBlockContainer>
-    </>
+    <GameBlockContainer id={arrowHelper(index)} onClick={handleModalOpen}>
+      <GameBlockIcon iconName={name} iconColor={color} />
+    </GameBlockContainer>
   );
 };
