@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { ContactTypeContainer } from './contactType.styles';
-import { Icon } from '@iconify/react';
-import { H5, PBase, PSmall } from '../../../../../global.styles';
+import { H5, PSmall } from '../../../../../global.styles';
 import { LinkIcon } from '../../../../icon/icon.component';
 
 type ContactTypeProps = {

@@ -3,14 +3,21 @@ import { ContactSection } from '../../components/getToKnowMeSections/contactSect
 import { ProjectsSection } from '../../components/getToKnowMeSections/projectsSection/projectsSection.component';
 import { StartSection } from '../../components/getToKnowMeSections/startSection/startSection.component';
 
+export const GAME_BLOCK_CONTENT_INDEXES = {
+  LITTLE_BIT_ABOUT_ME: 0,
+  EDUCATION: 1,
+  PROJECTS: 2,
+  CONTACT: 3,
+};
+
 export const getGameBlockContent = (index: number) => {
   switch (index) {
-    case 0:
+    case GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME:
       return {
         title: 'LITTLE BIT ABOUT ME',
         content: <StartSection />,
       };
-    case 1:
+    case GAME_BLOCK_CONTENT_INDEXES.EDUCATION:
       return {
         title: 'EDUCATION',
         content: (
@@ -19,10 +26,10 @@ export const getGameBlockContent = (index: number) => {
           </>
         ),
       };
-    case 2:
+    case GAME_BLOCK_CONTENT_INDEXES.PROJECTS:
       return { title: 'PROJECTS', content: <ProjectsSection /> };
-    case 3:
-      return { title: 'CONTACT', content: <ContactSection /> };
+    case GAME_BLOCK_CONTENT_INDEXES.CONTACT:
+      return { title: 'CONTACT', content: <ContactSection />, imgURL:'/resources/CONTACT_BUSINESSMANLEANING.png' };
     default:
       return { title: 'DEFAULT', content: <div>Some Error i occured.</div> };
   }

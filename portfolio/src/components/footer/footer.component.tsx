@@ -1,7 +1,8 @@
 import { FooterContainer, IconsContainer } from './footer.styles';
-import { LinkIcon } from '../icon/icon.component';
+
 import { ICONS } from '../../utils/icons/icons.utils';
 import { MY_INFOS } from '../../utils/myInfos/myInfos.utils';
+import { LinkIcon } from '../icon/icon.component';
 export const Footer = () => {
   return (
     <FooterContainer>

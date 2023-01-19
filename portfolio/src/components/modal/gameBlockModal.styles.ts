@@ -1,6 +1,22 @@
-import { Button, DialogActions, DialogTitle } from '@material-ui/core';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from '@material-ui/core';
 import styled from 'styled-components';
 import { Colors, StandardFlexContainer, Typography } from '../../global.styles';
+const CustomDialogAttrs = {
+  height: '35rem',
+  // border: '2px solid red',
+};
+
+export const CustomDialog = styled(Dialog).attrs({
+  PaperProps: {
+    style: CustomDialogAttrs,
+  },
+})``;
 
 export const ButtonGameBlockModal = styled(Button)`
   background-color: transparent;
@@ -46,11 +62,23 @@ export const ModuleContent = styled(StandardFlexContainer)`
   margin: 0.8rem 0rem;
 `;
 
-export const DialogTitleCustom = styled(DialogTitle).attrs({
+export const CustomDialogTitle = styled(DialogTitle).attrs({
   id: 'scroll-dialog-title',
 })`
   border-bottom: 1px solid ${Colors.primary};
 `;
-export const DialogActionsCustom = styled(DialogActions)`
+export const CustomDialogActions = styled(DialogActions)`
   border-top: 1px solid ${Colors.primary};
+`;
+export const CustomDialogContent = styled(DialogContent)`
+  position: relative;
+`;
+
+export const DialogImage = styled.img`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 13rem;
+  margin: auto;
+  border-right: 1px solid ${Colors.dark};
 `;

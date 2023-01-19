@@ -18,6 +18,6 @@ export const AppContainer = styled.div`
 export const HPBCKGImage = styled.img`
   position: absolute;
   bottom: 0;
-  right: 7rem;
+  right: 4.5rem;
   width: 13rem;
 `;

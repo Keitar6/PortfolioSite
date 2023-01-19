@@ -2,34 +2,56 @@ import { useContext, useEffect, useRef } from 'react';
 import { ModalsContext } from '../../contexts/modals.context';
 
 import {
-  DialogTitleCustom,
-  DialogActionsCustom,
+  CustomDialogTitle,
+  CustomDialogActions,
+  CustomDialog,
+  CustomDialogContent,
+  DialogImage,
 } from './gameBlockModal.styles';
 
+import { Button, DialogContentText } from '@material-ui/core';
 import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-} from '@material-ui/core';
-import { getGameBlockContent } from '../../utils/modal/getModalContent.utils'; 
+  GAME_BLOCK_CONTENT_INDEXES,
+  getGameBlockContent,
+} from '../../utils/modal/getModalContent.utils';
 import { Title } from '../../global.styles';
+
 export default function GameBlockModal() {
+  const descriptionElementRef = useRef<HTMLElement>(null);
   const {
     isModalOpen,
     setIsModalOpen,
+
     modalContent,
     setModalContent,
+
     modalContentTitle,
     setModalContentTitle,
+
+    modalContentImage,
+    setModalContentImage,
+
     clickedGameBlockIndex,
+    setClickedGameBlockIndex,
   } = useContext(ModalsContext);
 
-  const handleClose = () => {
+  const ifPreviousButtonDisabled =
+    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME
+      ? true
+      : false;
+
+  const ifNextButtonDisabled =
+    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.CONTACT ? true : false;
+
+  const closeHandler = () => {
     setIsModalOpen(false);
   };
 
-  const descriptionElementRef = useRef<HTMLElement>(null);
+  const nextHandler = () => setClickedGameBlockIndex(clickedGameBlockIndex + 1);
+
+  const previousHandler = () =>
+    setClickedGameBlockIndex(clickedGameBlockIndex - 1);
+
   useEffect(() => {
     if (isModalOpen) {
       const { current: descriptionElement } = descriptionElementRef;
@@ -37,24 +59,29 @@ export default function GameBlockModal() {
         descriptionElement.focus();
       }
     }
-    const { title, content } = getGameBlockContent(clickedGameBlockIndex);
+    const { title, content, imgURL } = getGameBlockContent(
+      clickedGameBlockIndex
+    );
     setModalContentTitle(title);
     setModalContent(content);
-  }, [isModalOpen]);
+    setModalContentImage(imgURL ? imgURL : '/');
+  }, [clickedGameBlockIndex]);
   return (
     <>
-      <Dialog
+      <CustomDialog
         open={isModalOpen}
-        onClose={handleClose}
+        onClose={closeHandler}
         scroll={'paper'}
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
-        <DialogTitleCustom>
+        <CustomDialogTitle>
           <Title>{modalContentTitle}</Title>{' '}
-        </DialogTitleCustom>
-
-        <DialogContent>
+        </CustomDialogTitle>
+        <CustomDialogContent>
+          {modalContentImage !== '/' ? (
+            <DialogImage src={modalContentImage} />
+          ) : null}
           <DialogContentText
             id='scroll-dialog-description'
             ref={descriptionElementRef}
@@ -62,12 +89,16 @@ export default function GameBlockModal() {
           >
             {modalContent}
           </DialogContentText>
-        </DialogContent>
-        <DialogActionsCustom>
-          <Button onClick={handleClose}>Previous</Button>
-          <Button onClick={handleClose}>Next</Button>
-        </DialogActionsCustom>
-      </Dialog>
+        </CustomDialogContent>
+        <CustomDialogActions>
+          <Button disabled={ifPreviousButtonDisabled} onClick={previousHandler}>
+            Previous
+          </Button>
+          <Button disabled={ifNextButtonDisabled} onClick={nextHandler}>
+            Next
+          </Button>
+        </CustomDialogActions>
+      </CustomDialog>
     </>
   );
 }

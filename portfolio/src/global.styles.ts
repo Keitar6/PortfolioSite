@@ -143,7 +143,7 @@ export const BareLink = styled(Link)`
 `;
 
 export const TextLink = styled(Link)`
-  cursor: default;
+  cursor: pointer;
   position: relative;
   color: inherit;
   text-decoration: inherit;
