@@ -1,11 +1,11 @@
-import { Colors } from '../../global.styles';
-import { LogName, LogoWrapper } from './logo.styles';
-import { Icon } from '@iconify/react';
+
+import { LogName, LogoWrapper,LogoImage } from './logo.styles';
 
 export const Logo = () => {
   return (
     <LogoWrapper>
-      <Icon icon='icon-park-twotone:cool' color={`${Colors.primary}`} />
+
+      <LogoImage src='/resources/logo/png/logo-no-background.png'/>
       <LogName>Mateusz Statkiewicz</LogName>
     </LogoWrapper>
   );

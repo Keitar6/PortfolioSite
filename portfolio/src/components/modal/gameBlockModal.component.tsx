@@ -1,104 +1,118 @@
-import { useContext, useEffect, useRef } from 'react';
-import { ModalsContext } from '../../contexts/modals.context';
+import { useContext, useEffect, useRef } from "react";
+import { ModalsContext } from "../../contexts/modals.context";
 
 import {
-  CustomDialogTitle,
-  CustomDialogActions,
-  CustomDialog,
-  CustomDialogContent,
-  DialogImage,
-} from './gameBlockModal.styles';
+	CustomDialogTitle,
+	CustomDialogActions,
+	CustomDialog,
+	CustomDialogContent,
+	DialogImage,
+} from "./gameBlockModal.styles";
 
-import { Button, DialogContentText } from '@material-ui/core';
+import { Button, DialogContentText } from "@material-ui/core";
 import {
-  GAME_BLOCK_CONTENT_INDEXES,
-  getGameBlockContent,
-} from '../../utils/modal/getModalContent.utils';
-import { Title } from '../../global.styles';
+	GAME_BLOCK_CONTENT_INDEXES,
+	getGameBlockContent,
+} from "../../utils/modal/getModalContent.utils";
+import { Title } from "../../global.styles";
+
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
+
+import * as React from "react";
+
+const Transition: any = React.forwardRef(function Transition(
+	props: TransitionProps & {
+		children: React.ReactElement<any, any>;
+	},
+	ref: React.Ref<any>
+) {
+	return <Slide direction='up' ref={ref} {...props} />;
+});
 
 export default function GameBlockModal() {
-  const descriptionElementRef = useRef<HTMLElement>(null);
-  const {
-    isModalOpen,
-    setIsModalOpen,
+	const descriptionElementRef = useRef<HTMLElement>(null);
+	const {
+		isModalOpen,
+		setIsModalOpen,
 
-    modalContent,
-    setModalContent,
+		modalContent,
+		setModalContent,
 
-    modalContentTitle,
-    setModalContentTitle,
+		modalContentTitle,
+		setModalContentTitle,
 
-    modalContentImage,
-    setModalContentImage,
+		modalContentImage,
+		setModalContentImage,
 
-    clickedGameBlockIndex,
-    setClickedGameBlockIndex,
-  } = useContext(ModalsContext);
+		clickedGameBlockIndex,
+		setClickedGameBlockIndex,
+	} = useContext(ModalsContext);
 
-  const ifPreviousButtonDisabled =
-    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME
-      ? true
-      : false;
+	const ifPreviousButtonDisabled =
+		clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME
+			? true
+			: false;
 
-  const ifNextButtonDisabled =
-    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.CONTACT ? true : false;
+	const ifNextButtonDisabled =
+		clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.CONTACT ? true : false;
 
-  const closeHandler = () => {
-    setIsModalOpen(false);
-  };
+	const closeHandler = () => {
+		setIsModalOpen(false);
+	};
 
-  const nextHandler = () => setClickedGameBlockIndex(clickedGameBlockIndex + 1);
+	const nextHandler = () => setClickedGameBlockIndex(clickedGameBlockIndex + 1);
 
-  const previousHandler = () =>
-    setClickedGameBlockIndex(clickedGameBlockIndex - 1);
+	const previousHandler = () =>
+		setClickedGameBlockIndex(clickedGameBlockIndex - 1);
 
-  useEffect(() => {
-    if (isModalOpen) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-    const { title, content, imgURL } = getGameBlockContent(
-      clickedGameBlockIndex
-    );
-    setModalContentTitle(title);
-    setModalContent(content);
-    setModalContentImage(imgURL ? imgURL : '/');
-  }, [clickedGameBlockIndex]);
-  return (
-    <>
-      <CustomDialog
-        open={isModalOpen}
-        onClose={closeHandler}
-        scroll={'paper'}
-        aria-labelledby='scroll-dialog-title'
-        aria-describedby='scroll-dialog-description'
-      >
-        <CustomDialogTitle>
-          <Title>{modalContentTitle}</Title>{' '}
-        </CustomDialogTitle>
-        <CustomDialogContent>
-          {modalContentImage !== '/' ? (
-            <DialogImage src={modalContentImage} />
-          ) : null}
-          <DialogContentText
-            id='scroll-dialog-description'
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {modalContent}
-          </DialogContentText>
-        </CustomDialogContent>
-        <CustomDialogActions>
-          <Button disabled={ifPreviousButtonDisabled} onClick={previousHandler}>
-            Previous
-          </Button>
-          <Button disabled={ifNextButtonDisabled} onClick={nextHandler}>
-            Next
-          </Button>
-        </CustomDialogActions>
-      </CustomDialog>
-    </>
-  );
+	useEffect(() => {
+		if (isModalOpen) {
+			const { current: descriptionElement } = descriptionElementRef;
+			if (descriptionElement !== null) {
+				descriptionElement.focus();
+			}
+		}
+		const { title, content, imgURL } = getGameBlockContent(
+			clickedGameBlockIndex
+		);
+		setModalContentTitle(title);
+		setModalContent(content);
+		setModalContentImage(imgURL ? imgURL : "/");
+	}, [clickedGameBlockIndex]);
+	return (
+		<>
+			<CustomDialog
+				open={isModalOpen}
+				TransitionComponent={Transition}
+				keepMounted
+				onClose={closeHandler}
+				scroll={"paper"}
+				aria-labelledby='scroll-dialog-title'
+				aria-describedby='scroll-dialog-description'>
+				<CustomDialogTitle>
+					<Title>{modalContentTitle}</Title>{" "}
+				</CustomDialogTitle>
+				<CustomDialogContent>
+					{modalContentImage !== "/" ? (
+						<DialogImage src={modalContentImage} />
+					) : null}
+					<DialogContentText
+						id='scroll-dialog-description'
+						ref={descriptionElementRef}
+						tabIndex={-1}>
+						{modalContent}
+					</DialogContentText>
+				</CustomDialogContent>
+				<CustomDialogActions>
+					<Button disabled={ifPreviousButtonDisabled} onClick={previousHandler}>
+						Previous
+					</Button>
+					<Button disabled={ifNextButtonDisabled} onClick={nextHandler}>
+						Next
+					</Button>
+				</CustomDialogActions>
+			</CustomDialog>
+		</>
+	);
 }

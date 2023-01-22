@@ -5,6 +5,7 @@ import { Routing } from './routing';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { Colors } from './global.styles';
 
+
 function App() {
   return (
     <AppContainer>
@@ -29,6 +30,7 @@ function App() {
           },
         }}
       />
+      
       <GameBlockModal />
       <Routing />
 
