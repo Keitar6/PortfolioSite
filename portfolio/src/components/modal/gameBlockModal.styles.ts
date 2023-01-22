@@ -59,7 +59,7 @@ export const SecondBandText = styled.p`
 
 export const ModuleContent = styled(StandardFlexContainer)`
 	transform: rotate(0deg);
-	padding: 0.5rem 0.5rem;
+	padding: 0rem 0rem;
 	margin: 0.8rem 0rem;
 `;
 
@@ -67,9 +67,18 @@ export const CustomDialogTitle = styled(DialogTitle).attrs({
 	id: "scroll-dialog-title",
 })`
 	border-bottom: 1px solid ${Colors.primary};
+	margin: 0rem 1rem;
 `;
+
+export const DialogTitleContent = styled(StandardFlexContainer)`
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+`;
+
 export const CustomDialogActions = styled(DialogActions)`
 	border-top: 1px solid ${Colors.primary};
+	margin: 0rem 1rem;
 `;
 export const CustomDialogContent = styled(DialogContent)`
 	position: relative;

@@ -7,6 +7,7 @@ import {
 	CustomDialog,
 	CustomDialogContent,
 	DialogImage,
+	DialogTitleContent,
 } from "./gameBlockModal.styles";
 
 import { Button, DialogContentText } from "@material-ui/core";
@@ -14,12 +15,13 @@ import {
 	GAME_BLOCK_CONTENT_INDEXES,
 	getGameBlockContent,
 } from "../../utils/modal/getModalContent.utils";
-import { Title } from "../../global.styles";
+import { H2, H3, Title } from "../../global.styles";
 
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 
 import * as React from "react";
+import { LogoImage } from "../logo/logoImage/logoImage.component";
 
 const Transition: any = React.forwardRef(function Transition(
 	props: TransitionProps & {
@@ -91,7 +93,10 @@ export default function GameBlockModal() {
 				aria-labelledby='scroll-dialog-title'
 				aria-describedby='scroll-dialog-description'>
 				<CustomDialogTitle>
-					<Title>{modalContentTitle}</Title>{" "}
+					<DialogTitleContent>
+						<H3>{modalContentTitle}</H3>
+						<LogoImage />
+					</DialogTitleContent>
 				</CustomDialogTitle>
 				<CustomDialogContent>
 					{modalContentImage !== "/" ? (

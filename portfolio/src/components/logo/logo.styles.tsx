@@ -9,6 +9,3 @@ export const LogName = styled(H2)`
 	color: ${Colors.primary};
 `;
 
-export const LogoImage = styled.img`
-	width: 3rem;
-`;

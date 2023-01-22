@@ -1,11 +1,12 @@
 
-import { LogName, LogoWrapper,LogoImage } from './logo.styles';
+import { LogName, LogoWrapper } from './logo.styles';
+import { LogoImage } from './logoImage/logoImage.component';
 
 export const Logo = () => {
   return (
     <LogoWrapper>
 
-      <LogoImage src='/resources/logo/png/logo-no-background.png'/>
+      <LogoImage/>
       <LogName>Mateusz Statkiewicz</LogName>
     </LogoWrapper>
   );

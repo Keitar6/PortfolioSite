@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import {
 	Colors,
-	goldenFontColor,
 	StandardFlexContainer,
 	Typography,
 } from "../../../global.styles";
 
 export const GameBlockContainer = styled(StandardFlexContainer)`
-
 	background-color: ${Colors.primary};
 	border: 1px solid ${Colors.primary};
+	color: ${Colors.light};
 	border-radius: ${Typography.buttonsRadius};
 	cursor: pointer;
 	width: 3rem;

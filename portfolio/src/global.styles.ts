@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 export const Colors = {
 	primary: "#5F3495",
 	primaryRGBA: "#5F3495e",
@@ -41,16 +41,6 @@ export const Typography = {
 	modalRadius: "1rem",
 	fontColor: "#000000",
 };
-export const goldenFontColor=`linear-gradient(
-  ${Colors.logo_colors.outer},
-  ${Colors.logo_colors.inner},
-  ${Colors.logo_colors.outer}
-)`
-export const goldenFont = css`
-	background-image: ${goldenFontColor};
-	background-clip: text;
-	color: transparent;
-`;
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -133,6 +123,7 @@ export const Title = styled(H3)`
 	//   ${Colors.primary},
 	//   ${Colors.dark}
 	// );
+	
 	padding-bottom: 0.5rem;
 	position: relative;
 
