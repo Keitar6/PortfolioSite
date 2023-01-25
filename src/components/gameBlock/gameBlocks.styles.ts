@@ -3,11 +3,9 @@ import { Colors, StandardFlexContainer } from '../../global.styles';
 
 export const GameBlocksWrapper = styled(StandardFlexContainer)`
   flex-direction: column;
-  justify-content: center;
-  flex: 1 1 30%;
   // border: 1px solid ${Colors.dark};
-
-  height: 100%;
+  width: 100%;
+  // padding: 2rem;
 `;
 
 export const GameBlockWrapper = styled(StandardFlexContainer)<{

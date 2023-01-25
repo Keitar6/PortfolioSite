@@ -2,29 +2,34 @@ import { GameBlocksContainer } from '../../components/gameBlock/gameBlocks.compo
 import {
   DescriptionHp,
   MyNameOnHp,
-  HomePageContainer,
+  HomePageWrapper,
   WelcomeContainer,
+  HPClickableWrapper,
+  WelcomeTitle
 } from './homePage.styles';
 
 import { Footer } from '../../components/footer/footer.component';
+import { HpClick } from '../../components/hpClickContent/hpClickContent.component';
 
 export const HomePage = () => {
   return (
     <>
-      <HomePageContainer>
-        <GameBlocksContainer />
-
+      <HomePageWrapper>
         <WelcomeContainer>
-          <MyNameOnHp>
-            <em>Hi, hello!</em>
-          </MyNameOnHp>
-          <DescriptionHp>
-            {' '}
-            i am a FrontEnd Developer , coffe lover and a secrets lover?{' '}
-          </DescriptionHp>
+          <WelcomeTitle>
+            {`<Greeting>`}
+            <MyNameOnHp>Hello</MyNameOnHp>
+            {`</Greeting>`}
+          </WelcomeTitle>
+
+          <DescriptionHp> i am a smooth creator of webapp's </DescriptionHp>
         </WelcomeContainer>
-      </HomePageContainer>
-      <Footer />
+        <HPClickableWrapper>
+          <GameBlocksContainer />
+          <HpClick />
+        </HPClickableWrapper>
+        <Footer />
+      </HomePageWrapper>
     </>
   );
 };

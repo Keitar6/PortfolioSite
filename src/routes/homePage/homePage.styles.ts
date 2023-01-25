@@ -6,24 +6,38 @@ import {
   Typography,
 } from '../../global.styles';
 
-export const HomePageContainer = styled(StandardFlexContainer)`
-  flex-direction: row;
-  // border: 1px solid green;
+export const HomePageWrapper = styled(StandardFlexContainer)`
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  // border: 1px solid red;
   height: 100%;
+  // overflow: scroll;
 `;
 
 export const WelcomeContainer = styled(StandardFlexContainer)`
-  justify-content: start;
-  align-items: start;
   flex-direction: column;
   // border: 1px solid green;
-  flex: 1 1 70%;
-  // padding: 0rem 6.5rem;
-  height: 100%;
+  width: 100%;
+`;
+
+export const HPClickableWrapper = styled(StandardFlexContainer)`
+  flex-direction: row;
+  flex-wrap: nowrap;
+  // border: 1px solid red;
+  width: 100%;
+  // flex: 1 1 60%;
 `;
 
 export const MyNameOnHp = styled(HPName)`
   display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const WelcomeTitle = styled.div`
+  display: flex;
+  font-size: ${Typography.fontSizes.PLarge};
   justify-content: center;
   align-items: center;
 `;

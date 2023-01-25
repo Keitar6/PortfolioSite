@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Colors } from './global.styles';
 
 export const AppContainer = styled.div`
-  border: 1px solid ${Colors.primary};
+  // border: 1px solid ${Colors.primary};
+  max-width: 60rem;
+  max-height: 35rem;
   background-color: ${Colors.light};
   border-radius: 3.75rem;
   box-shadow: 20px 30px 50px ${Colors.dark};

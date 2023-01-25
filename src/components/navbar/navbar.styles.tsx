@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { StandardFlexContainer } from '../../global.styles';
 
 export const RouterLinks = styled(StandardFlexContainer)`
-  gap: 1rem;
+  gap: 0rem;
 `;
 
 export const NavbarWrapper = styled(StandardFlexContainer)`

@@ -5,7 +5,6 @@ export const NaviWrapper = styled(StandardFlexContainer)`
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid ${Colors.tertiary};
-
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  min-width: 43rem;
+  padding-bottom: 0.5rem;
 `;

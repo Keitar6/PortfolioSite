@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ModalsContext } from '../../contexts/modals.context';
-import { H3, TextLink } from '../../global.styles';
+import { PBase, TextLink } from '../../global.styles';
 import { GAME_BLOCK_CONTENT_INDEXES } from '../../utils/modal/getModalContent.utils';
 import { RouterLinks, NavbarWrapper } from './navbar.styles';
 
@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <NavbarWrapper>
       <RouterLinks>
-        <H3>
+        <PBase>
           <TextLink
             onClick={() =>
               aboutOnClickHandler(
@@ -27,8 +27,8 @@ export const Navbar = () => {
           >
             About
           </TextLink>
-        </H3>
-        <H3>
+        </PBase>
+        <PBase>
           <TextLink
             onClick={() =>
               aboutOnClickHandler(GAME_BLOCK_CONTENT_INDEXES.PROJECTS)
@@ -37,8 +37,8 @@ export const Navbar = () => {
           >
             Projects
           </TextLink>
-        </H3>
-        <H3>
+        </PBase>
+        <PBase>
           <TextLink
             onClick={() =>
               aboutOnClickHandler(GAME_BLOCK_CONTENT_INDEXES.CONTACT)
@@ -47,7 +47,7 @@ export const Navbar = () => {
           >
             Contact
           </TextLink>
-        </H3>
+        </PBase>
       </RouterLinks>
     </NavbarWrapper>
   );

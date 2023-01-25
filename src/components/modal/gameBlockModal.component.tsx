@@ -15,7 +15,7 @@ import {
   GAME_BLOCK_CONTENT_INDEXES,
   getGameBlockContent,
 } from '../../utils/modal/getModalContent.utils';
-import { H3 } from '../../global.styles';
+import { Colors, H4 } from '../../global.styles';
 
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
@@ -95,7 +95,7 @@ export default function GameBlockModal() {
       >
         <CustomDialogTitle>
           <DialogTitleContent>
-            <H3>{modalContentTitle}</H3>
+            <H4 style={{ color: `${Colors.primary}` }}>{modalContentTitle}</H4>
             <LogoImage />
           </DialogTitleContent>
         </CustomDialogTitle>

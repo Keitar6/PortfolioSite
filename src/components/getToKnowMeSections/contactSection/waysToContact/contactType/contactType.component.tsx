@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ContactTypeContainer } from './contactType.styles';
-import { H5, PSmall } from '../../../../../global.styles';
+import { H6, PBase } from '../../../../../global.styles';
 import { LinkIcon } from '../../../../icon/icon.component';
 
 type ContactTypeProps = {
@@ -18,10 +18,10 @@ export const ContactType: FC<ContactTypeProps> = ({
 }) => {
   return (
     <ContactTypeContainer>
-      <LinkIcon whereTo={whereTo} iconType={icon}></LinkIcon>
+      <LinkIcon whereTo={whereTo} iconType={icon} width={40}></LinkIcon>
 
-      <H5>{title}</H5>
-      {textType ? <PSmall>{textType}</PSmall> : null}
+      <H6>{title}</H6>
+      {textType ? <PBase>{textType}</PBase> : null}
     </ContactTypeContainer>
   );
 };

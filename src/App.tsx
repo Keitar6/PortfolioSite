@@ -1,10 +1,9 @@
-import { AppContainer, HPBCKGImage } from './App.style';
+import { AppContainer } from './App.style';
 import GameBlockModal from './components/modal/gameBlockModal.component';
 
 import { Routing } from './routing';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { Colors } from './global.styles';
-
 
 function App() {
   return (
@@ -30,14 +29,10 @@ function App() {
           },
         }}
       />
-      
       <GameBlockModal />
       <Routing />
-
-      <HPBCKGImage src='/resources/HP_meditation.png' />
     </AppContainer>
   );
 }
 
 export default App;
-
