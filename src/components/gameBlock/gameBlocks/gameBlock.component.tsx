@@ -14,6 +14,8 @@ export const GameBlock: FC<GameBlockProps> = ({ icon, index }) => {
   const { name, color } = icon;
   const { setIsModalOpen, setClickedGameBlockIndex } =
     useContext(ModalsContext);
+  const width = 3.3;
+  const iconWidth = (width - 0.5) * 16;
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -21,8 +23,12 @@ export const GameBlock: FC<GameBlockProps> = ({ icon, index }) => {
   };
 
   return (
-    <GameBlockContainer id={arrowHelper(index)} onClick={handleModalOpen}>
-      <GameBlockIcon iconName={name} iconColor={color} />
+    <GameBlockContainer
+      width={width}
+      id={arrowHelper(index)}
+      onClick={handleModalOpen}
+    >
+      <GameBlockIcon iconWidth={iconWidth} iconName={name} iconColor={color} />
     </GameBlockContainer>
   );
 };
