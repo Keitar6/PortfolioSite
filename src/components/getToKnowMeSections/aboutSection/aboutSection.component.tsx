@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { H1 } from '../../../global.styles';
 import {
   AboutSectionImage,
   AboutSectionText,
