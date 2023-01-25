@@ -5,7 +5,7 @@ import {
   HomePageWrapper,
   WelcomeContainer,
   HPClickableWrapper,
-  WelcomeTitle
+  WelcomeTitle,
 } from './homePage.styles';
 
 import { Footer } from '../../components/footer/footer.component';
@@ -17,8 +17,8 @@ export const HomePage = () => {
       <HomePageWrapper>
         <WelcomeContainer>
           <WelcomeTitle>
-            {`<Greeting>`}
-            <MyNameOnHp>Hello</MyNameOnHp>
+            {`<Greeting> `}
+            <MyNameOnHp> Hello </MyNameOnHp>
             {`</Greeting>`}
           </WelcomeTitle>
 

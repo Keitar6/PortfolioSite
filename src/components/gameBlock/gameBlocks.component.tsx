@@ -6,7 +6,7 @@ import { GameBlock } from './gameBlocks/gameBlock.component';
 
 export const GameBlocksContainer = () => {
   const arrow = useXarrow();
-  
+
   return (
     <GameBlocksWrapper>
       <Xwrapper>
@@ -21,9 +21,35 @@ export const GameBlocksContainer = () => {
             </GameBlockWrapper>
           );
         })}
-        <Xarrow color={Colors.arrowsColor} start='elem1' end='elem2' />
-        <Xarrow color={Colors.arrowsColor} start='elem2' end='elem3' />
-        <Xarrow color={Colors.arrowsColor} start='elem3' end='elem4' />
+        <Xarrow
+          color={Colors.arrowsColor}
+          start='elem1'
+          end='elem2'
+          animateDrawing={true}
+          endAnchor='left'
+          path='grid'
+          dashness={false}
+        />
+        <Xarrow
+          color={Colors.arrowsColor}
+          start='elem2'
+          end='elem3'
+          animateDrawing={true}
+          startAnchor='right'
+          path='grid'
+          gridBreak='-1%'
+          dashness={false}
+        />
+        <Xarrow
+          color={Colors.arrowsColor}
+          start='elem3'
+          end='elem4'
+          animateDrawing={true}
+          startAnchor='left'
+          gridBreak='-1%'
+          path='grid'
+          dashness={false}
+        />
       </Xwrapper>
     </GameBlocksWrapper>
   );
