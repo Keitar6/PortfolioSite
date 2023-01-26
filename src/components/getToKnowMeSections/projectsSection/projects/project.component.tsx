@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import { FC, PropsWithChildren } from 'react';
 
-import { H3, PBase } from '../../../../global.styles';
+import { H4, PBase } from '../../../../global.styles';
 import {
   ProjectContent,
   ProjectPreviewContainer,
@@ -28,7 +28,7 @@ export const Project: FC<PropsWithChildren<ProjectProps>> = ({
         <Icon icon={`${iconType}`} width='48' />
       </ProjectPreviewContainer>
       <ProjectDescription>
-        <H3>{title}</H3>
+        <H4>{title}</H4>
         <PBase>{description}</PBase>
         <DescriptionPoints>
           {descriptionPoints.map((descriptionPoint) => {

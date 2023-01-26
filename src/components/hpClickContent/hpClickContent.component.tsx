@@ -1,9 +1,10 @@
-import { HpClickContainer,HpClickImage } from './hpClickContent.styles';
+import { HpClickContainer } from './hpClickContent.styles';
+import { LogoImage } from '../../components/logo/logoImage/logoImage.component';
 
 export const HpClick = () => {
   return (
     <HpClickContainer>
-      <HpClickImage src='https://cdn.openart.ai/stable_diffusion/7aab6130e40aadaf01c067885058f90b19c55407_2000x2000.webp' />
+      <LogoImage logoWidth={14} />
     </HpClickContainer>
   );
 };

@@ -1,9 +1,19 @@
 import styled from 'styled-components';
-import { Colors, StandardFlexContainer } from '../../../../global.styles';
+import {
+  Colors,
+  StandardFlexContainer,
+  StandardFlexContainerMixing,
+} from '../../../../global.styles';
 
 export const ProjectContent = styled(StandardFlexContainer)``;
 
-export const ProjectPreviewContainer = styled(StandardFlexContainer)`
+export const ProjectPreviewContainer = styled.a.attrs({
+  href: 'https://www.pszczeli-plaster.statkiewiczmateusz.pl/',
+  target: '_blank',
+})`
+  ${StandardFlexContainerMixing}
+  border: 1px solid red;
+
   flex-basis: 30%;
 `;
 

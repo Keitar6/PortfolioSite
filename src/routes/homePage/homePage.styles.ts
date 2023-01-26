@@ -7,17 +7,14 @@ import {
 } from '../../global.styles';
 
 export const HomePageWrapper = styled(StandardFlexContainer)`
-  flex-direction: column;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
   justify-content: space-between;
-  // border: 1px solid red;
   height: 100%;
-  // overflow: scroll;
 `;
 
 export const WelcomeContainer = styled(StandardFlexContainer)`
   flex-direction: column;
-  // border: 1px solid green;
   width: 100%;
 `;
 
@@ -26,7 +23,7 @@ export const HPClickableWrapper = styled(StandardFlexContainer)`
   flex-wrap: nowrap;
   // border: 1px solid red;
   width: 100%;
-  // flex: 1 1 60%;
+  height: 100%;
 `;
 
 export const MyNameOnHp = styled(HPName)`

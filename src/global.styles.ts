@@ -73,7 +73,7 @@ body {
 ${StandardFlexContainerMixing}
 	font-family: ${Typography.fontType};
 	color: ${Typography.fontColor};
-  background-color: ${Colors.primary};
+  background-color: ${Colors.light};
   // padding: 1rem 0rem;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

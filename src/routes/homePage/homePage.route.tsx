@@ -16,20 +16,18 @@ export const HomePage = () => {
     <>
       <HomePageWrapper>
         <WelcomeContainer>
-          <WelcomeTitle>
-            {`<Greeting> `}
+          {/* <WelcomeTitle>
             <MyNameOnHp> Hello </MyNameOnHp>
-            {`</Greeting>`}
           </WelcomeTitle>
 
-          <DescriptionHp> i am a smooth creator of webapp's </DescriptionHp>
+          <DescriptionHp> i am a smooth creator of webapp's </DescriptionHp> */}
+          <HpClick />
         </WelcomeContainer>
         <HPClickableWrapper>
           <GameBlocksContainer />
-          <HpClick />
         </HPClickableWrapper>
-        <Footer />
       </HomePageWrapper>
+      <Footer />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { H1, H4 } from '../../../global.styles';
+import { H5 } from '../../../global.styles';
 import {
   EducationalDatesContainer,
   EducationalSchoolsContainer,
@@ -22,7 +22,7 @@ export const EducationSectionText = () => {
           </EducationalDatesContainer>
 
           <EducationalSchoolDescription>
-            <H4>Mechanics, Master degree</H4>
+            <H5>Mechanics, Master degree</H5>
           </EducationalSchoolDescription>
         </EducationalSchoolsContainer>
         <EducationalSchoolsContainer>
@@ -41,7 +41,7 @@ export const EducationSectionText = () => {
           </EducationalDatesContainer>
 
           <EducationalSchoolDescription>
-            <H4>Automatic Control and Robotics, Bachelor of Engineering</H4>
+            <H5>Automatic Control and Robotics, Bachelor of Engineering</H5>
           </EducationalSchoolDescription>
         </EducationalSchoolsContainer>
         <EducationalSchoolsContainer>

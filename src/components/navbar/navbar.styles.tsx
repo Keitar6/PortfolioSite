@@ -8,4 +8,5 @@ export const RouterLinks = styled(StandardFlexContainer)`
 export const NavbarWrapper = styled(StandardFlexContainer)`
   flex-direction: row;
   gap: 1rem;
+  flex: 1 1 30%;
 `;

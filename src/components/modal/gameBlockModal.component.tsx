@@ -93,6 +93,7 @@ export default function GameBlockModal() {
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
+
         <CustomDialogTitle>
           <DialogTitleContent>
             <H4 style={{ color: `${Colors.primary}` }}>{modalContentTitle}</H4>
@@ -119,6 +120,7 @@ export default function GameBlockModal() {
             Next
           </Button>
         </CustomDialogActions>
+        
       </CustomDialog>
     </>
   );
