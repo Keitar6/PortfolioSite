@@ -3,14 +3,13 @@ import { ModalsContext } from '../../contexts/modals.context';
 
 import {
   CustomDialogTitle,
-  CustomDialogActions,
+  CustomDialogStepper,
   CustomDialog,
   CustomDialogContent,
-  DialogImage,
   DialogTitleContent,
 } from './gameBlockModal.styles';
 
-import { Button, DialogContentText } from '@material-ui/core';
+import { Button, DialogContentText, useTheme } from '@material-ui/core';
 import {
   GAME_BLOCK_CONTENT_INDEXES,
   getGameBlockContent,
@@ -23,6 +22,11 @@ import { TransitionProps } from '@mui/material/transitions';
 import * as React from 'react';
 import { LogoImage } from '../logo/logoImage/logoImage.component';
 
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { bindKeyboard } from 'react-swipeable-views-utils';
+
 const Transition: any = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement<any, any>;
@@ -31,42 +35,38 @@ const Transition: any = React.forwardRef(function Transition(
 ) {
   return <Slide direction='up' ref={ref} {...props} />;
 });
+const KeyboardSwipeView = bindKeyboard(SwipeableViews);
 
 export default function GameBlockModal() {
   const descriptionElementRef = useRef<HTMLElement>(null);
   const {
     isModalOpen,
     setIsModalOpen,
-
-    modalContent,
-    setModalContent,
-
-    modalContentTitle,
-    setModalContentTitle,
-
-    modalContentImage,
-    setModalContentImage,
-
     clickedGameBlockIndex,
     setClickedGameBlockIndex,
   } = useContext(ModalsContext);
-
-  const ifPreviousButtonDisabled =
-    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME
-      ? true
-      : false;
-
-  const ifNextButtonDisabled =
-    clickedGameBlockIndex === GAME_BLOCK_CONTENT_INDEXES.CONTACT ? true : false;
+  const theme = useTheme();
+  const maxSteps = Object.keys(GAME_BLOCK_CONTENT_INDEXES).length;
 
   const closeHandler = () => {
     setIsModalOpen(false);
   };
 
-  const nextHandler = () => setClickedGameBlockIndex(clickedGameBlockIndex + 1);
+  const handleNext = () => {
+    setClickedGameBlockIndex(
+      (prevclickedGameBlockIndex) => prevclickedGameBlockIndex + 1
+    );
+  };
 
-  const previousHandler = () =>
-    setClickedGameBlockIndex(clickedGameBlockIndex - 1);
+  const handleBack = () => {
+    setClickedGameBlockIndex(
+      (prevclickedGameBlockIndex) => prevclickedGameBlockIndex - 1
+    );
+  };
+
+  const handleStepChange = (step: number) => {
+    setClickedGameBlockIndex(step);
+  };
 
   useEffect(() => {
     if (isModalOpen) {
@@ -75,13 +75,7 @@ export default function GameBlockModal() {
         descriptionElement.focus();
       }
     }
-    const { title, content, imgURL } = getGameBlockContent(
-      clickedGameBlockIndex
-    );
-    setModalContentTitle(title);
-    setModalContent(content);
-    setModalContentImage(imgURL ? imgURL : '/');
-  }, [clickedGameBlockIndex]);
+  }, []);
   return (
     <>
       <CustomDialog
@@ -93,34 +87,66 @@ export default function GameBlockModal() {
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
+        <KeyboardSwipeView
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={clickedGameBlockIndex}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+          resistance={true}
+          // springConfig={{ tension: 300, friction: 30 }}
+        >
+          {Object.keys(GAME_BLOCK_CONTENT_INDEXES).map((key, index) => {
+            const { title, content, imgURL } = getGameBlockContent(index);
+            return (
+              <div key={title}>
+                <CustomDialogTitle>
+                  <DialogTitleContent>
+                    <H4 style={{ color: `${Colors.primary}` }}>{title}</H4>
+                    <LogoImage />
+                  </DialogTitleContent>
+                </CustomDialogTitle>
+                <CustomDialogContent as='div'>
+                  {/* {imgURL !== '/' ? (
+            <DialogImage src={imgURL} />
+        ) : null} */}
+                  <DialogContentText
+                    id='scroll-dialog-description'
+                    ref={descriptionElementRef}
+                    tabIndex={-1}
+                  >
+                    {content}
+                  </DialogContentText>
+                </CustomDialogContent>
+              </div>
+            );
+          })}
+        </KeyboardSwipeView>
 
-        <CustomDialogTitle>
-          <DialogTitleContent>
-            <H4 style={{ color: `${Colors.primary}` }}>{modalContentTitle}</H4>
-            <LogoImage />
-          </DialogTitleContent>
-        </CustomDialogTitle>
-        <CustomDialogContent>
-          {modalContentImage !== '/' ? (
-            <DialogImage src={modalContentImage} />
-          ) : null}
-          <DialogContentText
-            id='scroll-dialog-description'
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {modalContent}
-          </DialogContentText>
-        </CustomDialogContent>
-        <CustomDialogActions>
-          <Button disabled={ifPreviousButtonDisabled} onClick={previousHandler}>
-            Previous
-          </Button>
-          <Button disabled={ifNextButtonDisabled} onClick={nextHandler}>
-            Next
-          </Button>
-        </CustomDialogActions>
-        
+        <CustomDialogStepper
+          steps={maxSteps}
+          position='static'
+          activeStep={clickedGameBlockIndex}
+          nextButton={
+            <Button
+              size='small'
+              onClick={handleNext}
+              disabled={clickedGameBlockIndex === maxSteps - 1}
+            >
+              Next
+              <KeyboardArrowRight />
+            </Button>
+          }
+          backButton={
+            <Button
+              size='small'
+              onClick={handleBack}
+              disabled={clickedGameBlockIndex === 0}
+            >
+              <KeyboardArrowLeft />
+              Back
+            </Button>
+          }
+        />
       </CustomDialog>
     </>
   );

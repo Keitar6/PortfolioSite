@@ -7,8 +7,9 @@ export const ProjectsSection = () => {
     <ProjectsSectionContainer>
       {ProjectsArray.map((project) => {
         const { iconType, title, description, descriptionPoints } = project;
-        return (  
+        return (
           <Project
+            key={title}
             iconType={iconType}
             title={title}
             description={description}
