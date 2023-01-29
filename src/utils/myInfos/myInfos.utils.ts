@@ -1,7 +1,6 @@
-export const MY_INFOS = {
+export const MY_INFOS: { [key: string]: string } = {
   phoneNumber: '+48 662096409',
-
-  github: 'https://github.com/Keitar6',
+  emailPrivate: 'statkprivate@gmail.com',
   linkedin: 'https://www.linkedin.com/in/mateuszs-statkiewicz/',
-  emailPrivate: 'statkprivate@gmail.com', 
+  github: 'https://github.com/Keitar6',
 };

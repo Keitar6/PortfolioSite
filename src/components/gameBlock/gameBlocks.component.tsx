@@ -4,6 +4,9 @@ import { gameBlockIcons } from '../../utils/gameBlock/gameBlock.utils';
 import { GameBlocksWrapper, GameBlockWrapper } from './gameBlocks.styles';
 import { GameBlock } from './gameBlocks/gameBlock.component';
 
+import { motion } from 'framer-motion';
+import { GameBlockVariant } from '../../utils/framer-motion/variants.utils';
+
 export const GameBlocksContainer = () => {
   const arrow = useXarrow();
 
@@ -17,7 +20,15 @@ export const GameBlocksContainer = () => {
 
           return (
             <GameBlockWrapper key={index} whichEndToJustify={whichEndToJustify}>
-              <GameBlock index={index} icon={gameBlockIcons[iconName]} />
+              <motion.div
+                variants={GameBlockVariant}
+                initial='enter'
+                animate='visible'
+                exit='exit'
+                custom={index}
+              >
+                <GameBlock index={index} icon={gameBlockIcons[iconName]} />
+              </motion.div>
             </GameBlockWrapper>
           );
         })}

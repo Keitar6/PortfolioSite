@@ -1,7 +1,6 @@
-export const ICONS = {
+export const ICONS: { [key: string]: string } = {
   github: 'uiw:github',
   linkedin: 'logos:linkedin-icon',
-  emailColor: 'logos:google-gmail',
-  emailGray: 'ic:outline-email',
+  emailPrivate: 'logos:google-gmail',
   phone: 'material-symbols:perm-phone-msg-rounded',
 };

@@ -3,6 +3,8 @@ import { StandardFlexContainer } from '../../global.styles';
 
 export const RouterLinks = styled(StandardFlexContainer)`
   gap: 0rem;
+  justify-content: end;
+  width: 100%;
 `;
 
 export const NavbarWrapper = styled(StandardFlexContainer)`

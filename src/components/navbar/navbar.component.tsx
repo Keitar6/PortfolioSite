@@ -1,53 +1,36 @@
-import { useContext } from 'react';
-import { ModalsContext } from '../../contexts/modals.context';
-import { PBase, TextLink } from '../../global.styles';
+import { PBase } from '../../global.styles';
 import { GAME_BLOCK_CONTENT_INDEXES } from '../../utils/modal/getModalContent.utils';
 import { RouterLinks, NavbarWrapper } from './navbar.styles';
 
-export const Navbar = () => {
-  const { setIsModalOpen, setClickedGameBlockIndex } =
-    useContext(ModalsContext);
+import { motion } from 'framer-motion';
+import { ScaledTextsVariant } from '../../utils/framer-motion/variants.utils';
+import { NavbarLinks } from './navbarLinks/navbarLinks.component';
 
-  function aboutOnClickHandler(index: number) {
-    setClickedGameBlockIndex(index);
-    setIsModalOpen(true);
-  }
+export const Navbar = () => {
+  const capitalize = (name: string) =>
+    name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
   return (
     <NavbarWrapper>
       <RouterLinks>
-        <PBase>
-          <TextLink
-            onClick={() =>
-              aboutOnClickHandler(
-                GAME_BLOCK_CONTENT_INDEXES.LITTLE_BIT_ABOUT_ME
-              )
-            }
-            to='/'
-          >
-            About
-          </TextLink>
-        </PBase>
-        <PBase>
-          <TextLink
-            onClick={() =>
-              aboutOnClickHandler(GAME_BLOCK_CONTENT_INDEXES.PROJECTS)
-            }
-            to='/'
-          >
-            Projects
-          </TextLink>
-        </PBase>
-        <PBase>
-          <TextLink
-            onClick={() =>
-              aboutOnClickHandler(GAME_BLOCK_CONTENT_INDEXES.CONTACT)
-            }
-            to='/'
-          >
-            Contact
-          </TextLink>
-        </PBase>
+        {Object.keys(GAME_BLOCK_CONTENT_INDEXES)
+          .slice(0, 3)
+          .map((sectionName, index) => {
+            console.log(sectionName, capitalize(sectionName), index);
+            return (
+              <PBase>
+                <motion.div
+                  variants={ScaledTextsVariant}
+                  initial='enter'
+                  animate='visible'
+                  exit='exit'
+                  custom={index}
+                >
+                  <NavbarLinks index={index} text={capitalize(sectionName)} />
+                </motion.div>
+              </PBase>
+            );
+          })}
       </RouterLinks>
     </NavbarWrapper>
   );
