@@ -105,7 +105,7 @@ export default function GameBlockModal() {
                     <LogoImage />
                   </DialogTitleContent>
                 </CustomDialogTitle>
-                <CustomDialogContent as='div'>
+                <CustomDialogContent >
                   {/* {imgURL !== '/' ? (
             <DialogImage src={imgURL} />
         ) : null} */}

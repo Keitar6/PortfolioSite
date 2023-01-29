@@ -10,27 +10,24 @@ export const Navbar = () => {
   const capitalize = (name: string) =>
     name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
+  const arrayToBeMapped = Object.keys(GAME_BLOCK_CONTENT_INDEXES);
+
   return (
     <NavbarWrapper>
       <RouterLinks>
-        {Object.keys(GAME_BLOCK_CONTENT_INDEXES)
-          .slice(0, 3)
-          .map((sectionName, index) => {
-            console.log(sectionName, capitalize(sectionName), index);
-            return (
-              <PBase>
-                <motion.div
-                  variants={ScaledTextsVariant}
-                  initial='enter'
-                  animate='visible'
-                  exit='exit'
-                  custom={index}
-                >
-                  <NavbarLinks index={index} text={capitalize(sectionName)} />
-                </motion.div>
-              </PBase>
-            );
-          })}
+        {arrayToBeMapped.map((sectionName, index) => (
+          <PBase>
+            <motion.div
+              variants={ScaledTextsVariant}
+              initial='enter'
+              animate='visible'
+              exit='exit'
+              custom={index}
+            >
+              <NavbarLinks index={index} text={capitalize(sectionName)} />
+            </motion.div>
+          </PBase>
+        ))}
       </RouterLinks>
     </NavbarWrapper>
   );

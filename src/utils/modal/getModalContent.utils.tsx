@@ -5,9 +5,9 @@ import { StartSection } from '../../components/getToKnowMeSections/startSection/
 
 export const GAME_BLOCK_CONTENT_INDEXES = {
   ABOUT: 0,
-  PROJECTS: 1,
-  CONTACT: 2,
-  EDUCATION: 3,
+  EDUCATION: 1,
+  PROJECTS: 2,
+  CONTACT: 3,
 };
 
 export const getGameBlockContent = (index: number) => {

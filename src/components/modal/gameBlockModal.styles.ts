@@ -1,7 +1,6 @@
 import {
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   MobileStepper,
@@ -90,6 +89,7 @@ export const StepperButton = styled(MobileStepper)`
 
 export const CustomDialogContent = styled(DialogContent)`
   position: relative;
+  
 `;
 
 export const DialogImage = styled.img`
@@ -100,3 +100,4 @@ export const DialogImage = styled.img`
   margin: auto;
   border-right: 1px solid ${Colors.dark};
 `;
+

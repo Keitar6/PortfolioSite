@@ -7,6 +7,7 @@ import {
   ProjectPreviewContainer,
   ProjectDescription,
   DescriptionPoints,
+  PreviewImage,
 } from './project.styles';
 
 type ProjectProps = {
@@ -14,6 +15,7 @@ type ProjectProps = {
   title: string;
   description: string;
   descriptionPoints: string[];
+  previewImage: string;
 };
 
 export const Project: FC<PropsWithChildren<ProjectProps>> = ({
@@ -21,11 +23,13 @@ export const Project: FC<PropsWithChildren<ProjectProps>> = ({
   title,
   description,
   descriptionPoints,
+  previewImage,
 }) => {
   return (
     <ProjectContent>
       <ProjectPreviewContainer>
-        <Icon icon={`${iconType}`} width='48' />
+        {/* <Icon icon={`${iconType}`} width='48' /> */}
+        <PreviewImage src={previewImage} />
       </ProjectPreviewContainer>
       <ProjectDescription>
         <H4>{title}</H4>

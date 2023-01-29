@@ -18,8 +18,12 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({ index, text }) => {
   }
 
   return (
-    <TextLink onClick={() => onClickHandler(index)} to='/'>
-      {text}
-    </TextLink>
+    <>
+      {text !== 'Education' ? (
+        <TextLink onClick={() => onClickHandler(index)} to='/'>
+          {text}
+        </TextLink>
+      ) : null}
+    </>
   );
 };

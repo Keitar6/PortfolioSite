@@ -12,7 +12,7 @@ export const ProjectPreviewContainer = styled.a.attrs({
   target: '_blank',
 })`
   ${StandardFlexContainerMixing}
-  border: 1px solid red;
+  // border: 1px solid red;
 
   flex-basis: 30%;
 `;
@@ -28,4 +28,8 @@ export const DescriptionPoints = styled.ul`
   flex-direction: column;
   padding-left: 1rem;
   padding-top: 1rem;
+`;
+
+export const PreviewImage = styled.img`
+  width: 100%;
 `;

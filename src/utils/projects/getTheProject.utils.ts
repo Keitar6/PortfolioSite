@@ -13,6 +13,7 @@ export const ProjectsArray = [
       'Styling - Styled Components',
       'State management - Redux',
     ],
+    image: 'resources/projectsPreview/PszczeliHP.png',
   },
   {
     index: 1,
@@ -26,6 +27,7 @@ export const ProjectsArray = [
       'Authentication and data management - Firebase Firestore',
       'Styling - SCSS ',
     ],
+    image: 'resources/projectsPreview/ClothingShop.png',
   },
   {
     index: 2,
@@ -39,5 +41,6 @@ export const ProjectsArray = [
       'Authentication and data management - Firebase Firestore',
       'Styling - SCSS ',
     ],
+    image: 'resources/projectsPreview/Portfolio.png',
   },
 ];
