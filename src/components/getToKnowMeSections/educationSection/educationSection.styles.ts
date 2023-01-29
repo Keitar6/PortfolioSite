@@ -25,7 +25,9 @@ export const EducationalSchoolDescription = styled(StandardFlexContainer)`
   justify-content: start;
 `;
 
-export const EduSectionWrapper = styled.div``;
+export const EduSectionWrapper = styled.div`
+
+`;
 
 export const EducationContainer = styled.div`
   display: flex;

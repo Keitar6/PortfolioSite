@@ -13,7 +13,7 @@ export const WaysToContact = () => {
       />
 
       <ContactType
-        icon={ICONS.emailColor}
+        icon={ICONS.emailPrivate}
         title='Email'
         textType={MY_INFOS.emailPrivate}
         whereTo={MY_INFOS.emailPrivate}

@@ -3,5 +3,6 @@ import { StandardFlexContainer } from '../../../global.styles';
 
 export const ContactSectionContainer = styled(StandardFlexContainer)`
   flex-direction: column;
-  gap: 1rem;w
+  gap: 1rem;
+  width: 100%;
 `;
