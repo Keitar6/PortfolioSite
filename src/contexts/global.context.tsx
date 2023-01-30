@@ -26,19 +26,18 @@ export const GlobalProvider: FC<PropsWithChildren> = ({ children }) => {
     window.matchMedia('(max-width: 600px)').matches
   );
   const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
-  const value = { matches, isHamburgerOpen, setHamburgerOpen };
+  const value = { matches };
   const cachedValue = useMemo(() => value, [matches]);
 
+  const endValue = { ...cachedValue, isHamburgerOpen, setHamburgerOpen };
+
   useEffect(() => {
-    console.log(matches);
     window
       .matchMedia('(max-width: 600px)')
       .addEventListener('change', (e) => setMatches(e.matches));
   });
 
   return (
-    <GlobalContext.Provider value={cachedValue}>
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext.Provider value={endValue}>{children}</GlobalContext.Provider>
   );
 };

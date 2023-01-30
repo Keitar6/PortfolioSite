@@ -14,7 +14,7 @@ export const getGameBlockContent = (index: number) => {
   switch (index) {
     case GAME_BLOCK_CONTENT_INDEXES.ABOUT:
       return {
-        title: 'LITTLE BIT ABOUT ME',
+        title: 'ABOUT ME',
         content: <StartSection />,
       };
     case GAME_BLOCK_CONTENT_INDEXES.EDUCATION:

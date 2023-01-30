@@ -28,11 +28,9 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({ index, text }) => {
         whileHover='hover'
         exit='exit'
       >
-        {text !== 'Education' ? (
-          <BareLink onClick={() => onClickHandler(index)} to='/'>
-            {text}
-          </BareLink>
-        ) : null}
+        <BareLink onClick={() => onClickHandler(index)} to='/'>
+          {text}
+        </BareLink>
       </motion.div>
     </>
   );

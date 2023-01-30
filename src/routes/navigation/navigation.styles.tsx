@@ -7,3 +7,10 @@ export const NaviWrapper = styled(StandardFlexContainer)`
   border-bottom: 1px solid ${Colors.tertiary};
   padding-bottom: 0.5rem;
 `;
+
+export const NaviLinksMobile = styled(StandardFlexContainer)`
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 0.5rem;
+`;

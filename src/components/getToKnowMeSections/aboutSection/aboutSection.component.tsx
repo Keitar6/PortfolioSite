@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Icon } from '@iconify/react';
 import {
   AboutSectionImage,
@@ -7,14 +8,20 @@ import {
   AboutSectionIconsContainer,
   AboutSectionWrapper,
 } from './aboutSection.styles';
+import { GlobalContext } from '../../../contexts/global.context';
+import { RESPO_SCALES } from '../../../utils/mobileStyles/respoScales.utils';
 
 export const AboutSection = () => {
-  const imagesWidth = '32';
+  const { matches } = useContext(GlobalContext);
+
+  const imagesWidth = !matches
+    ? RESPO_SCALES.ABOUT_SECTION.regular
+    : RESPO_SCALES.ABOUT_SECTION.mobile;
+
   return (
     <>
       <AboutSectionContainer>
-        {/* <H1>Little bit about me</H1> */}
-        <AboutSectionWrapper>
+        <AboutSectionWrapper matches={matches}>
           <AboutSectionImageAndBadgeContainer>
             <AboutSectionImage />
             <AboutSectionIconsContainer>

@@ -105,10 +105,7 @@ export default function GameBlockModal() {
                     <LogoImage />
                   </DialogTitleContent>
                 </CustomDialogTitle>
-                <CustomDialogContent >
-                  {/* {imgURL !== '/' ? (
-            <DialogImage src={imgURL} />
-        ) : null} */}
+                <CustomDialogContent>
                   <DialogContentText
                     id='scroll-dialog-description'
                     ref={descriptionElementRef}

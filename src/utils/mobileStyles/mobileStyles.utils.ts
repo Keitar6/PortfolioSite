@@ -37,3 +37,18 @@ export const gameBlocksWrapperUnder600 = css`
     padding: 0.5rem;
   }
 `;
+
+export const aboutSectionImageUnder600 = css`
+  @media only screen and (max-width: 600px) {
+    width: 8rem;
+  }
+`;
+export const aboutSectionTextUnder600 = css`
+  @media only screen and (max-width: 600px) {
+  }
+`;
+
+export const H1Under600 = css`
+  @media only screen and (max-width: 600px) {
+  }
+`;

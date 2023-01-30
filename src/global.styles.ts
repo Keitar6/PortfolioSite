@@ -98,6 +98,9 @@ export const H3 = styled.h3`
 `;
 export const H4 = styled.h4`
   font-size: ${Typography.fontSizes.H4};
+  @media only screen and (max-width: 600px) {
+    font-size: ${Typography.fontSizes.H5};
+  }
 `;
 export const H5 = styled.h5`
   font-size: ${Typography.fontSizes.H5};
