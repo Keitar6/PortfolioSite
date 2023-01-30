@@ -18,7 +18,7 @@ type contextModalType = {
 export const ModalsContext = createContext<contextModalType>({
   isModalOpen: false,
   setIsModalOpen: () => {},
-  clickedGameBlockIndex: -0,
+  clickedGameBlockIndex: 0,
   setClickedGameBlockIndex: () => {},
 });
 

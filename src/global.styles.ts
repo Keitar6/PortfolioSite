@@ -71,16 +71,13 @@ body {
   width:100%;
 
 ${StandardFlexContainerMixing}
+
 	font-family: ${Typography.fontType};
 	color: ${Typography.fontColor};
   background-color: ${Colors.light};
-  // padding: 1rem 0rem;
+  
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-    // @media screen and (max-width: 800px){
-    //     padding: 10px;
-    // }
 
 }
 `;
@@ -89,7 +86,6 @@ export const HPName = styled.h1`
   font-size: ${Typography.fontSizes.HPName};
   color: ${Colors.dark};
 `;
-
 export const H1 = styled.h1`
   font-size: ${Typography.fontSizes.H1};
   font-weight: bold;
@@ -97,23 +93,18 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: ${Typography.fontSizes.H2};
 `;
-
 export const H3 = styled.h3`
   font-size: ${Typography.fontSizes.H3};
 `;
-
 export const H4 = styled.h4`
   font-size: ${Typography.fontSizes.H4};
 `;
-
 export const H5 = styled.h5`
   font-size: ${Typography.fontSizes.H5};
 `;
-
 export const H6 = styled.h6`
   font-size: ${Typography.fontSizes.H6};
 `;
-
 export const PLarge = styled.p`
   font-size: ${Typography.fontSizes.PLarge};
 `;
@@ -123,7 +114,6 @@ export const PBase = styled.p`
 export const PSmall = styled.p`
   font-size: ${Typography.fontSizes.PSmall};
 `;
-
 export const Title = styled(H3)`
   // border-bottom: 2px solid;
   // border-image-slice: 1;

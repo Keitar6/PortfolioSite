@@ -4,6 +4,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { GlobalProvider } from './contexts/global.context';
 import { ModalsProvider } from './contexts/modals.context';
 import { GlobalStyle } from './global.styles';
 import reportWebVitals from './reportWebVitals';
@@ -14,12 +15,14 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <ModalsProvider>
-        <StylesProvider injectFirst>
-          <GlobalStyle />
-          <App />
-        </StylesProvider>
-      </ModalsProvider>
+      <GlobalProvider>
+        <ModalsProvider>
+          <StylesProvider injectFirst>
+            <GlobalStyle />
+            <App />
+          </StylesProvider>
+        </ModalsProvider>
+      </GlobalProvider>
     </BrowserRouter>
   </StrictMode>
 );

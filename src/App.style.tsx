@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Colors } from './global.styles';
+import { HP_mobileUnder600 } from './utils/mobileStyles/mobileStyles.utils';
 
 export const AppContainer = styled.div`
-  // border: 1px solid ${Colors.primary};
   max-width: 60rem;
   max-height: 35rem;
   background-color: ${Colors.light};
@@ -14,6 +14,7 @@ export const AppContainer = styled.div`
   flex-basis: 100%;
   height: 100%;
 
+  ${HP_mobileUnder600}
   position: relative;
 `;
 
