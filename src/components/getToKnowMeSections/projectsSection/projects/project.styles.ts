@@ -8,7 +8,6 @@ import {
 export const ProjectContent = styled(StandardFlexContainer)``;
 
 export const ProjectPreviewContainer = styled.a.attrs({
-  href: 'https://www.pszczeli-plaster.statkiewiczmateusz.pl/',
   target: '_blank',
 })`
   ${StandardFlexContainerMixing}

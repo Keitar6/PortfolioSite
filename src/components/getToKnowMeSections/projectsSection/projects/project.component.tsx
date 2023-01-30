@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react';
 import { FC, PropsWithChildren } from 'react';
 
 import { H4, PBase } from '../../../../global.styles';
@@ -16,6 +15,7 @@ type ProjectProps = {
   description: string;
   descriptionPoints: string[];
   previewImage: string;
+  projectUrl: string;
 };
 
 export const Project: FC<PropsWithChildren<ProjectProps>> = ({
@@ -24,11 +24,11 @@ export const Project: FC<PropsWithChildren<ProjectProps>> = ({
   description,
   descriptionPoints,
   previewImage,
+  projectUrl,
 }) => {
   return (
     <ProjectContent>
-      <ProjectPreviewContainer>
-        {/* <Icon icon={`${iconType}`} width='48' /> */}
+      <ProjectPreviewContainer href={projectUrl}>
         <PreviewImage src={previewImage} />
       </ProjectPreviewContainer>
       <ProjectDescription>

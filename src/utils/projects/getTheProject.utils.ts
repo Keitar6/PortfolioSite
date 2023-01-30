@@ -14,6 +14,7 @@ export const ProjectsArray = [
       'State management - Redux',
     ],
     image: 'resources/projectsPreview/PszczeliHP.png',
+    url: 'https://www.pszczeli-plaster.statkiewiczmateusz.pl/',
   },
   {
     index: 1,
@@ -28,6 +29,7 @@ export const ProjectsArray = [
       'Styling - SCSS ',
     ],
     image: 'resources/projectsPreview/ClothingShop.png',
+    url: 'https://www.clothing-shop.statkiewiczmateusz.pl/',
   },
   {
     index: 2,
@@ -42,5 +44,6 @@ export const ProjectsArray = [
       'Styling - SCSS ',
     ],
     image: 'resources/projectsPreview/Portfolio.png',
+    url: '/',
   },
 ];

@@ -101,3 +101,23 @@ export const HPLogoVariant: Variants = {
     opacity: 0,
   },
 };
+
+export const ProjectsVariant: Variants = {
+  enter: {
+    opacity: 0,
+  },
+  visible: () => {
+    const ProjectsDuration = 0.6;
+    return {
+      opacity: 1,
+      transition: {
+        duration: ProjectsDuration,
+        ease: 'easeInOut',
+        delay: 0.1,
+      },
+    };
+  },
+  exit: {
+    opacity: 0,
+  },
+};
