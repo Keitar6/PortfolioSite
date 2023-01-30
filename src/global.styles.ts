@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { FontSizesUnder600 } from './utils/mobileStyles/mobileStyles.utils';
 export const Colors = {
   primary: '#5F3495',
   primaryRGBA: '#5F3495e',
@@ -98,21 +99,22 @@ export const H3 = styled.h3`
 `;
 export const H4 = styled.h4`
   font-size: ${Typography.fontSizes.H4};
-  @media only screen and (max-width: 600px) {
-    font-size: ${Typography.fontSizes.H5};
-  }
+  ${FontSizesUnder600({ element: Typography.fontSizes.H5 })}
 `;
 export const H5 = styled.h5`
   font-size: ${Typography.fontSizes.H5};
+  ${FontSizesUnder600({ element: Typography.fontSizes.PSmall })}
 `;
 export const H6 = styled.h6`
   font-size: ${Typography.fontSizes.H6};
 `;
 export const PLarge = styled.p`
   font-size: ${Typography.fontSizes.PLarge};
+  ${FontSizesUnder600({ element: Typography.fontSizes.PBase })}
 `;
 export const PBase = styled.p`
   font-size: ${Typography.fontSizes.PBase};
+  ${FontSizesUnder600({ element: Typography.fontSizes.PSmall })}
 `;
 export const PSmall = styled.p`
   font-size: ${Typography.fontSizes.PSmall};

@@ -48,7 +48,8 @@ export const aboutSectionTextUnder600 = css`
   }
 `;
 
-export const H1Under600 = css`
+export const FontSizesUnder600 = ({ element }: { element: string }) => `
   @media only screen and (max-width: 600px) {
+    font-size: ${element}
   }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors, StandardFlexContainer } from '../../../global.styles';
+import { Colors, StandardFlexContainer, PBase } from '../../../global.styles';
 
 export const EducationalDatesContainer = styled(StandardFlexContainer)`
   border-right: 1px solid ${Colors.dark};
@@ -11,7 +11,7 @@ export const EducationalDatesContainer = styled(StandardFlexContainer)`
   flex: 1 1 20%;
 `;
 
-export const SchoolDate = styled.div`
+export const SchoolDate = styled(PBase)`
   display: flex;
 `;
 
@@ -25,9 +25,7 @@ export const EducationalSchoolDescription = styled(StandardFlexContainer)`
   justify-content: start;
 `;
 
-export const EduSectionWrapper = styled.div`
-
-`;
+export const EduSectionWrapper = styled.div``;
 
 export const EducationContainer = styled.div`
   display: flex;

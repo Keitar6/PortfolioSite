@@ -1,4 +1,4 @@
-import { H5 } from '../../../global.styles';
+import { H5, PBase } from '../../../global.styles';
 import {
   EducationalDatesContainer,
   EducationalSchoolsContainer,
@@ -27,10 +27,10 @@ export const EducationSectionText = () => {
         </EducationalSchoolsContainer>
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>
-            <SchoolDate>- Present</SchoolDate>
+            <SchoolDate>Present</SchoolDate>
           </EducationalDatesContainer>
           <EducationalSchoolDescription>
-            <div>University of Science and Technology in Wroclaw</div>
+            <PBase>University of Science and Technology in Wroclaw</PBase>
           </EducationalSchoolDescription>
         </EducationalSchoolsContainer>
       </EducationContainer>
@@ -46,10 +46,10 @@ export const EducationSectionText = () => {
         </EducationalSchoolsContainer>
         <EducationalSchoolsContainer>
           <EducationalDatesContainer>
-            <SchoolDate>- 2020/02</SchoolDate>
+            <SchoolDate>2020/02</SchoolDate>
           </EducationalDatesContainer>
           <EducationalSchoolDescription>
-            <div>University of Science and Technology in Wroclaw</div>
+            <PBase>University of Science and Technology in Wroclaw</PBase>
           </EducationalSchoolDescription>
         </EducationalSchoolsContainer>
       </EducationContainer>
