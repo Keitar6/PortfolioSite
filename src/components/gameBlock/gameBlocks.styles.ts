@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { Colors, StandardFlexContainer } from '../../global.styles';
+import { StandardFlexContainer } from '../../global.styles';
+import {
+  gameBlockWrapperUnder600,
+  gameBlocksWrapperUnder600,
+} from '../../utils/mobileStyles/mobileStyles.utils';
 
 export const GameBlocksWrapper = styled(StandardFlexContainer)`
   flex-direction: column;
-  // border: 1px solid ${Colors.dark};
   width: 100%;
-  // padding: 2rem;
+  padding: 1rem;
+  ${gameBlocksWrapperUnder600}
 `;
 
 export const GameBlockWrapper = styled(StandardFlexContainer)<{
@@ -17,4 +21,5 @@ export const GameBlockWrapper = styled(StandardFlexContainer)<{
     props.whichEndToJustify ? props.whichEndToJustify : ''};
   max-width: 15rem;
   min-width: 11rem;
+  ${gameBlockWrapperUnder600}
 `;

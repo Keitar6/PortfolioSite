@@ -4,6 +4,7 @@ import { HP_mobileUnder600 } from './utils/mobileStyles/mobileStyles.utils';
 
 export const AppContainer = styled.div`
   max-width: 60rem;
+  min-width: 43rem;
   max-height: 35rem;
   background-color: ${Colors.light};
   border-radius: 3.75rem;

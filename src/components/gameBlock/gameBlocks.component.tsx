@@ -6,9 +6,12 @@ import { GameBlock } from './gameBlocks/gameBlock.component';
 
 import { motion } from 'framer-motion';
 import { GameBlockVariant } from '../../utils/framer-motion/variants.utils';
+import { useContext } from 'react';
+import { GlobalContext } from '../../contexts/global.context';
 
 export const GameBlocksContainer = () => {
   const arrow = useXarrow();
+  const { matches } = useContext(GlobalContext);
 
   return (
     <GameBlocksWrapper>
@@ -19,7 +22,10 @@ export const GameBlocksContainer = () => {
           const whichEndToJustify = index % 2 === 0 ? 'start' : 'end';
 
           return (
-            <GameBlockWrapper key={index} whichEndToJustify={whichEndToJustify}>
+            <GameBlockWrapper
+              key={index}
+              whichEndToJustify={whichEndToJustify}
+            >
               <motion.div
                 variants={GameBlockVariant}
                 initial='enter'
