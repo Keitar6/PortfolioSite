@@ -154,6 +154,8 @@ export const BareLink = styled(Link)`
   cursor: pointer;
   text-decoration: inherit;
   color: inherit;
+  text-decoration: inherit;
+  padding: 0.4rem;
 `;
 
 export const TextLink = styled(Link)`
@@ -173,7 +175,7 @@ export const TextLink = styled(Link)`
     left: 0;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
   }
 
   &:hover::before {

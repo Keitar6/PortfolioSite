@@ -15,8 +15,16 @@ export const ScaledTextsVariant: Variants = {
       },
     };
   },
+  hover: {
+    scale: 1.2,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+      delay: 0.1,
+    },
+  },
   exit: {
-    scale: 0,
+    scale: 1,
   },
 };
 
@@ -119,5 +127,28 @@ export const ProjectsVariant: Variants = {
   },
   exit: {
     opacity: 0,
+  },
+};
+
+export const LinksVariant: Variants = {
+  enter: {
+    scale: 1,
+  },
+  hover: {
+    scale: 1.2,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+      delay: 0.1,
+    },
+  },
+
+  exit: {
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: 'easeInOut',
+      delay: 0.1,
+    },
   },
 };

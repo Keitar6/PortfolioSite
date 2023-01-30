@@ -20,6 +20,7 @@ export const Footer = () => {
                 initial='enter'
                 animate='visible'
                 exit='exit'
+                whileHover='hover'
                 custom={index}
               >
                 <LinkIcon iconType={ICONS[info]} whereTo={MY_INFOS[info]} />

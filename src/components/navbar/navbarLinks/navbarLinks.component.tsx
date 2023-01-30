@@ -1,7 +1,10 @@
 import { FC, useContext } from 'react';
 
-import { TextLink } from '../../../global.styles';
+import { BareLink } from '../../../global.styles';
 import { ModalsContext } from '../../../contexts/modals.context';
+
+import { motion } from 'framer-motion';
+import { LinksVariant } from '../../../utils/framer-motion/variants.utils';
 
 type NavbarLinksProps = {
   index: number;
@@ -19,11 +22,18 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({ index, text }) => {
 
   return (
     <>
-      {text !== 'Education' ? (
-        <TextLink onClick={() => onClickHandler(index)} to='/'>
-          {text}
-        </TextLink>
-      ) : null}
+      <motion.div
+        variants={LinksVariant}
+        initial='enter'
+        whileHover='hover'
+        exit='exit'
+      >
+        {text !== 'Education' ? (
+          <BareLink onClick={() => onClickHandler(index)} to='/'>
+            {text}
+          </BareLink>
+        ) : null}
+      </motion.div>
     </>
   );
 };
