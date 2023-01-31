@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { ContactTypeContainer } from './contactType.styles';
 import { H6, PBase } from '../../../../../global.styles';
 import { LinkIcon } from '../../../../icon/icon.component';
+import { GlobalContext } from '../../../../../contexts/global.context';
+import { RESPO_SCALES } from '../../../../../utils/mobileStyles/respoScales.utils';
 
 type ContactTypeProps = {
   title: string;
@@ -16,9 +18,14 @@ export const ContactType: FC<ContactTypeProps> = ({
   textType = null,
   whereTo,
 }) => {
+  const { matches } = useContext(GlobalContext);
+  const iconWidth = matches
+    ? RESPO_SCALES.CONTACT_SECTION.ICONS.mobile
+    : RESPO_SCALES.CONTACT_SECTION.ICONS.regular;
+
   return (
     <ContactTypeContainer>
-      <LinkIcon whereTo={whereTo} iconType={icon} width={40}></LinkIcon>
+      <LinkIcon whereTo={whereTo} iconType={icon} width={iconWidth}></LinkIcon>
 
       <H6>{title}</H6>
       {textType ? <PBase>{textType}</PBase> : null}

@@ -32,3 +32,6 @@ export const EducationContainer = styled.div`
   flex-direction: column;
   margin-top: 0.8rem;
 `;
+export const UniImage = styled.img`
+  width: 100%;
+`;

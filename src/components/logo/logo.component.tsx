@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+
 import { LogName, LogoWrapper } from './logo.styles';
 import { LogoImage } from './logoImage/logoImage.component';
 
@@ -6,8 +8,12 @@ import {
   ScaledTitleVariant,
   ScaledLogoVariant,
 } from '../../utils/framer-motion/variants.utils';
+import { GlobalContext } from '../../contexts/global.context';
 
 export const Logo = () => {
+  const { matches } = useContext(GlobalContext);
+  const logoWidth = matches ? 2 : 2.5;
+
   return (
     <>
       <LogoWrapper>
@@ -17,7 +23,7 @@ export const Logo = () => {
           animate='visible'
           exit='exit'
         >
-          <LogoImage />
+          <LogoImage logoWidth={logoWidth} />
         </motion.div>
       </LogoWrapper>
       <motion.div

@@ -18,4 +18,11 @@ export const RESPO_SCALES = {
     regular: 32,
     mobile: 18,
   },
+
+  CONTACT_SECTION: {
+    ICONS: {
+      regular: 40,
+      mobile: 28,
+    },
+  },
 };

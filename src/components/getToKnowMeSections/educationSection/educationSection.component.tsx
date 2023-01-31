@@ -6,12 +6,13 @@ import {
   EducationContainer,
   SchoolDate,
   EducationalSchoolDescription,
+  UniImage,
 } from './educationSection.styles';
 
 export const EducationSectionText = () => {
   return (
     <EduSectionWrapper>
-      <img
+      <UniImage
         src='/resources/LOGO_PWR.png'
         alt='Wroclaw University of Science and Technology Logo'
       />
