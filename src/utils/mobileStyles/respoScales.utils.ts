@@ -14,6 +14,12 @@ export const RESPO_SCALES = {
       blockSize: 15 / 4,
     },
   },
+  NAVBAR: {
+    LOGO: {
+      regular: 2.5,
+      mobile: 2,
+    },
+  },
   ABOUT_SECTION: {
     regular: 32,
     mobile: 18,

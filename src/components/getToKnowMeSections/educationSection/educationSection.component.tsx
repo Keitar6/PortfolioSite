@@ -1,4 +1,5 @@
 import { H5, PBase } from '../../../global.styles';
+import { ProjectsVariant } from '../../../utils/framer-motion/variants.utils';
 import {
   EducationalDatesContainer,
   EducationalSchoolsContainer,
@@ -8,9 +9,14 @@ import {
   EducationalSchoolDescription,
   UniImage,
 } from './educationSection.styles';
+import { motion } from 'framer-motion';
 
 export const EducationSectionText = () => {
   return (
+  <motion.div
+    variants={ProjectsVariant}
+    initial='enter'
+    whileInView='visible' >
     <EduSectionWrapper>
       <UniImage
         src='/resources/LOGO_PWR.png'
@@ -55,5 +61,6 @@ export const EducationSectionText = () => {
         </EducationalSchoolsContainer>
       </EducationContainer>
     </EduSectionWrapper>
+   </motion.div>
   );
 };

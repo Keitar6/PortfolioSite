@@ -10,6 +10,8 @@ import {
 } from './aboutSection.styles';
 import { GlobalContext } from '../../../contexts/global.context';
 import { RESPO_SCALES } from '../../../utils/mobileStyles/respoScales.utils';
+import { motion } from 'framer-motion';
+import { ProjectsVariant } from '../../../utils/framer-motion/variants.utils';
 
 export const AboutSection = () => {
   const { matches } = useContext(GlobalContext);
@@ -19,7 +21,10 @@ export const AboutSection = () => {
     : RESPO_SCALES.ABOUT_SECTION.mobile;
 
   return (
-    <>
+  <motion.div
+    variants={ProjectsVariant}
+    initial='enter'
+    whileInView='visible' >
       <AboutSectionContainer>
         <AboutSectionWrapper matches={matches}>
           <AboutSectionImageAndBadgeContainer>
@@ -46,6 +51,6 @@ export const AboutSection = () => {
           </AboutSectionText>
         </AboutSectionWrapper>
       </AboutSectionContainer>
-    </>
+  </motion.div>
   );
 };
