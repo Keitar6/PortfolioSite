@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href ='https://www.statkiewiczmateusz.pl/'>
+  <a href ='https://www.statkiewiczmateusz.pl'>
     <img href="resources/logo/svg/logo-color.svg" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">Portfolio</h3>
@@ -37,9 +37,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p align="center">
+<a align="center" src='https://www.statkiewiczmateusz.pl'>
   <img src="https://i.postimg.cc/Hn6ZgCtJ/Portfolio.png" alt="Portfolio image"/>
-</p>
+</a>
 
 I present to you the design of an ecommerce shop where you can buy honey related products and of course honey itself! I didn't have any 'real' database so I used firebase, where I just put some sample items. This project was created as a training project in my current company's internal training program called React Academy. In the project i have learned a lot, i am sure that there some minor bugs that i have not seen so please let me know so i can become better developer! Thanks in advance!
 
