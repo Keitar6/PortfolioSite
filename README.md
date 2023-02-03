@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href ='https://www.statkiewiczmateusz.pl/'>
-    <img src="resources/logo/svg/logo-color.svg" alt="Logo" width="80" height="80">
+    <img href="resources/logo/svg/logo-color.svg" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">Portfolio</h3>
 </div>
