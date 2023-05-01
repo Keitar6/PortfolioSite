@@ -135,14 +135,13 @@ export const LinksVariant: Variants = {
     scale: 1,
   },
   hover: {
-    scale: 1.2,
+    scale: 1.1,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
       delay: 0.1,
     },
   },
-
   exit: {
     scale: 1,
     transition: {

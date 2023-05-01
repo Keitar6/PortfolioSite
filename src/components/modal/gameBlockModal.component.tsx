@@ -77,7 +77,7 @@ export default function GameBlockModal() {
     }
   }, []);
   return (
-    <>
+    
       <CustomDialog
         open={isModalOpen}
         TransitionComponent={Transition}
@@ -93,10 +93,9 @@ export default function GameBlockModal() {
           onChangeIndex={handleStepChange}
           enableMouseEvents
           resistance={true}
-          // springConfig={{ tension: 300, friction: 30 }}
         >
           {Object.keys(GAME_BLOCK_CONTENT_INDEXES).map((key, index) => {
-            const { title, content, imgURL } = getGameBlockContent(index);
+            const { title, content } = getGameBlockContent(index);
             return (
               <div key={title}>
                 <CustomDialogTitle>
@@ -105,7 +104,7 @@ export default function GameBlockModal() {
                     <LogoImage />
                   </DialogTitleContent>
                 </CustomDialogTitle>
-                <CustomDialogContent>
+                <CustomDialogContent >
                   <DialogContentText
                     id='scroll-dialog-description'
                     ref={descriptionElementRef}
@@ -145,6 +144,6 @@ export default function GameBlockModal() {
           }
         />
       </CustomDialog>
-    </>
+    
   );
 }

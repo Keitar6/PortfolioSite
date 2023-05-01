@@ -20,11 +20,9 @@ export const getGameBlockContent = (index: number) => {
     case GAME_BLOCK_CONTENT_INDEXES.EDUCATION:
       return {
         title: 'EDUCATION',
-        content: (
-          <>
+        content: 
             <EducationSectionText />
-          </>
-        ),
+        ,
       };
     case GAME_BLOCK_CONTENT_INDEXES.PROJECTS:
       return { title: 'PROJECTS', content: <ProjectsSection /> };

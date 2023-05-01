@@ -31,23 +31,28 @@ export const AboutSection = () => {
             <AboutSectionImage />
             <AboutSectionIconsContainer>
               <Icon icon='logos:react' width={imagesWidth} />
-              <Icon icon='logos:redux' width={imagesWidth} />
+              <Icon icon='simple-icons:nextdotjs' width={imagesWidth} />
               <Icon icon='logos:typescript-icon' width={imagesWidth} />
               <Icon icon='logos:javascript' width={imagesWidth} />
-              <Icon icon='logos:angular-icon' width={imagesWidth} />
-              <Icon icon='logos:firebase' width={imagesWidth} />
-              <Icon icon='logos:figma' width={imagesWidth} />
+              <Icon icon='logos:tailwindcss-icon' width={imagesWidth} />
+              <Icon icon='skill-icons:styledcomponents' width={imagesWidth} />
+              <Icon icon='logos:msw-icon' width={imagesWidth} />
+              <Icon icon='logos:jest' width={imagesWidth} />
+              <Icon icon='file-icons:chartjs' width={imagesWidth} />
+              <Icon icon='logos:redux' width={imagesWidth} />
               <Icon icon='vscode-icons:file-type-css' width={imagesWidth} />
               <Icon icon='vscode-icons:file-type-html' width={imagesWidth} />
               <Icon icon='mdi:git' width={imagesWidth} />
+              <Icon icon='logos:vitejs' width={imagesWidth} />
+              <Icon icon='logos:figma' width={imagesWidth} />
             </AboutSectionIconsContainer>
           </AboutSectionImageAndBadgeContainer>
           <AboutSectionText>
-            I am a Front End developer with a React TS as my main technology but
-            i am able to work with Angular TS as well. Make sure to check on my
-            projects ! I see myself as a good coffee and a tennis player
-            amateur. In the rest of my free time i do polish my pen spinning
-            skills, folding origami and solving puzzles.
+         I am a React Front End developer at Capgemini.
+         I work in the same position at CoderCrew,
+         where I develop applications for non-profit organizations to polish
+         my skills and gain knowledge (currently I work with NEXT JS and tailwind).
+         In my free time I like to climb and play tennis (I also love taking a sip of good coffee). 
           </AboutSectionText>
         </AboutSectionWrapper>
       </AboutSectionContainer>

@@ -12,7 +12,6 @@ export const ContactSection = () => {
     whileInView='visible' >
     <ContactSectionContainer>
       <H4>Let's keep in touch !</H4>
-
       <WaysToContact />
       <H4>Have any questions? Send me a message!</H4>
     </ContactSectionContainer>

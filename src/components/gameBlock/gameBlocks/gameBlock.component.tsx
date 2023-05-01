@@ -21,7 +21,7 @@ export const GameBlock: FC<GameBlockProps> = ({ icon, index }) => {
   const width = matches
     ? RESPO_SCALES.LOGO_GAMEBLOCK_Mobile.gameBlock.blockSize
     : RESPO_SCALES.LOGO_GAMEBLOCK_Regular.gameBlock.blockSize;
-  const iconWidth = (width - 0.5) * 16;
+  const iconWidth = (width - 1) * 16;
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
