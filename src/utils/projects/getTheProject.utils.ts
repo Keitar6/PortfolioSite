@@ -2,6 +2,25 @@ export const ProjectsArray = [
   {
     index: 0,
     iconType: 'mdi:bee-flower',
+    title: 'Bedland',
+    description:
+      'Internal company open source project. Project has its own backend, frontend and design teams. It still does not has its designated functionality, project is still in progress. Application to manage apartments for residents and managers.',
+      descriptionPoints: [
+      'Implementation using React with Typescript',
+      'Design creation - Figma',
+      'Testing - Vitest & Jest',
+      'Authentication and data management - Backend team',
+      'Styling - styled-components ',
+      'State management - Redux + RTK Query',
+      'Project conducted in agile methodology with JIRA, Bitbucket, Confluence and Git for version controlling',
+      'Built with Vite'
+    ],
+    image: 'resources/LogoResident.svg',
+    url: 'https://github.com/Bedland-cap/bedland-frontend',
+  },
+  {
+    index: 1,
+    iconType: 'mdi:bee-flower',
     title: 'Honey Ecommerce Shop',
     description:
       'The App is a result of the corporate React Academy training dedicated for new interns and juniors. Applications basic functionality along with design was tested and checked by tutor that is a Senior.',
@@ -17,7 +36,7 @@ export const ProjectsArray = [
     url: 'https://www.pszczeli-plaster.statkiewiczmateusz.pl/',
   },
   {
-    index: 1,
+    index: 2,
     iconType: 'mdi:bee-flower',
     title: 'Clothing Shop',
     description:
@@ -32,7 +51,7 @@ export const ProjectsArray = [
     url: 'https://www.clothing-shop.statkiewiczmateusz.pl/',
   },
   {
-    index: 2,
+    index: 3,
     iconType: 'mdi:bee-flower',
     title: 'Portfolio',
     description:
@@ -46,4 +65,5 @@ export const ProjectsArray = [
     image: 'resources/projectsPreview/Portfolio.png',
     url: '/',
   },
+  
 ];
